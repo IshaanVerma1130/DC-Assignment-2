@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
@@ -8,7 +9,14 @@ import java.util.concurrent.locks.*;
 public class AggregationServer {
     private static long lamportTimestamp = 1;
     private static int NUM_THREADS = 10;
-    private static final BlockingQueue<ClientRequest> requestQueue = new LinkedBlockingQueue<>();
+    private static final PriorityBlockingQueue<ClientRequest> requestQueue = new PriorityBlockingQueue<>(10,
+            new Comparator<ClientRequest>() {
+                @Override
+                public int compare(ClientRequest request1, ClientRequest request2) {
+                    return Long.compare(request1.timestamp, request2.timestamp);
+                }
+            });
+
     private static final Lock lamportLock = new ReentrantLock();
     private static final Condition queueNotEmpty = lamportLock.newCondition();
 
@@ -21,12 +29,17 @@ public class AggregationServer {
 
         ExecutorService executor = Executors.newFixedThreadPool(NUM_THREADS);
 
+        ScheduledExecutorService deletionScheduler = Executors.newScheduledThreadPool(1);
+
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("Server listening on port " + PORT);
             for (int i = 0; i < NUM_THREADS; i++) {
                 Thread processorThread = new Thread(new RequestProcessor());
                 processorThread.start();
             }
+
+            deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 30, TimeUnit.SECONDS);
+
             while (true) {
                 Socket clientSocket = serverSocket.accept();
                 executor.submit(new ClientHandler(clientSocket));
@@ -35,6 +48,15 @@ public class AggregationServer {
             e.printStackTrace();
         } finally {
             executor.shutdown();
+        }
+    }
+
+    private static void cleanupOldRequests() {
+        lamportLock.lock();
+        try {
+            Modifier.removeOldData();
+        } finally {
+            lamportLock.unlock();
         }
     }
 

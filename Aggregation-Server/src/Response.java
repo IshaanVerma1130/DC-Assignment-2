@@ -1,4 +1,4 @@
-public class WeatherData {
+public class Response {
     private String id;
     private String name;
     private String state;
@@ -16,9 +16,8 @@ public class WeatherData {
     private String wind_dir;
     private String wind_spd_kmh;
     private String wind_spd_kt;
-    private String time_added;
 
-    public WeatherData() {
+    public Response() {
         this.id = null;
         this.name = null;
         this.state = null;
@@ -36,7 +35,6 @@ public class WeatherData {
         this.wind_dir = null;
         this.wind_spd_kmh = null;
         this.wind_spd_kt = null;
-        this.time_added = null;
     }
 
     // Getter and Setter for 'id'
@@ -190,14 +188,5 @@ public class WeatherData {
 
     public void setWind_spd_kt(String wind_spd_kt) {
         this.wind_spd_kt = wind_spd_kt;
-    }
-
-    // Getter and Setter for 'time_added'
-    public String getTime_added() {
-        return time_added;
-    }
-
-    public void setTime_added(Long timeAdded) {
-        this.time_added = Long.toString(timeAdded);
     }
 }
