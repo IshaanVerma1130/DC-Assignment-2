@@ -12,28 +12,19 @@ public class CS {
     static int clientTimestamp = 0;
 
     public static void main(String[] args) {
-        // if (args.length != 3) {
-        // System.out.println("Usage: java CS <SERVER URL> <PORT> <CS ID>");
-        // return;
-        // }
+        if (args.length != 3) {
+            System.out.println("Usage: java CS <SERVER URL> <PORT> <CS ID>");
+            return;
+        }
 
-        // String SERVER_URL = args[0];
-        // Integer PORT = Integer.parseInt(args[1]);
-        // Integer CS_ID = Integer.parseInt(args[2]);
+        String SERVER_URL = args[0];
+        Integer PORT = Integer.parseInt(args[1]);
+        Integer CS_ID = Integer.parseInt(args[2]);
 
-        String SERVER_URL = "localhost";
-        Integer PORT = 4567;
-        Integer CS_ID = 2;
-
-        // String fileDirectory = "resources/";
-        // String fileName = "CS-" + CS_ID + ".json";
+        int maxRetries = 3;
+        int retryCount = 0;
 
         try {
-            // BufferedReader br = new BufferedReader(new FileReader(fileDirectory +
-            // fileName));
-            // ObjectMapper objectMapper = new ObjectMapper();
-            // JsonNode jsonArray = objectMapper.readTree(br);
-
             List<WeatherData> entries = Utils.generateJson(CS_ID);
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -46,34 +37,48 @@ public class CS {
 
             if (jsonEntries.isArray()) {
                 for (JsonNode jsonObject : jsonEntries) {
-                    Socket socket = new Socket(SERVER_URL, PORT);
-                    OutputStream out = socket.getOutputStream();
-                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    boolean success = false;
 
-                    String requestString = Utils.generatePostRequest(SERVER_URL, clientTimestamp,
-                            jsonObject.toString());
+                    while (!success && retryCount < maxRetries) {
+                        Socket socket = new Socket(SERVER_URL, PORT);
+                        OutputStream out = socket.getOutputStream();
+                        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                    out.write(requestString.getBytes());
-                    out.flush();
+                        String requestString = Utils.generatePostRequest(SERVER_URL, clientTimestamp,
+                                jsonObject.toString());
 
-                    String responseTag = in.readLine();
+                        out.write(requestString.getBytes());
+                        out.flush();
 
-                    if (responseTag.equals("OK")) {
-                        System.out.println("Server processed request.");
-                        processRequest(in);
+                        String responseTag = in.readLine();
 
-                    } else if (responseTag.equals("WAIT")) {
-                        System.out.println("Waiting for server response...");
-
-                        String waitResponse = in.readLine();
-                        if (waitResponse.equals("PROCESSING")) {
+                        if (responseTag.equals("OK")) {
                             System.out.println("Server processed request.");
                             processRequest(in);
+                            success = true;
+                        } else if (responseTag.equals("WAIT")) {
+                            System.out.println("Waiting for server response...");
+
+                            String waitResponse = in.readLine();
+                            if (waitResponse.equals("PROCESSING")) {
+                                System.out.println("Server processed request.");
+                                processRequest(in);
+                            }
+                            success = true;
+                        } else {
+                            System.out.println("Error response received. Retrying...");
+                            retryCount++;
                         }
+
+                        out.close();
+                        in.close();
+                        socket.close();
                     }
-                    out.close();
-                    in.close();
-                    socket.close();
+
+                    if (!success) {
+                        System.out.println("Maximum retries reached. Unable to process request.");
+                    }
+                    retryCount = 0;
                 }
             }
         } catch (FileNotFoundException e) {

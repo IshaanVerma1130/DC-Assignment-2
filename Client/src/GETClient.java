@@ -18,46 +18,59 @@ public class GETClient {
         Integer PORT = Integer.parseInt(args[1]);
         Integer CLIENT_ID = Integer.parseInt(args[2]);
 
-        // String SERVER_URL = "localhost";
-        // Integer PORT = 4567;
-        // Integer CLIENT_ID = 1;
-
         String fileDirectory = "resources/";
         String fileName = "Client-" + CLIENT_ID + ".txt";
 
         String input;
+        int maxRetries = 3;
+        int retryCount = 0;
+
         try {
             BufferedReader br = new BufferedReader(new FileReader(fileDirectory + fileName));
             while ((input = br.readLine()) != null) {
                 input = input.trim();
 
-                Socket socket = new Socket(SERVER_URL, PORT);
-                OutputStream out = socket.getOutputStream();
-                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                boolean success = false;
+                while (!success && retryCount < maxRetries) {
+                    Socket socket = new Socket(SERVER_URL, PORT);
+                    OutputStream out = socket.getOutputStream();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                String requestString = Utils.generateGetRequest(SERVER_URL, clientTimestamp, input);
+                    String requestString = Utils.generateGetRequest(SERVER_URL, clientTimestamp, input);
 
-                out.write(requestString.getBytes());
-                out.flush();
+                    out.write(requestString.getBytes());
+                    out.flush();
 
-                String responseTag = in.readLine();
+                    String responseTag = in.readLine();
 
-                if (responseTag.equals("OK")) {
-                    System.out.println("Server processed request.");
-                    processRequest(in);
-
-                } else if (responseTag.equals("WAIT")) {
-                    System.out.println("Waiting for server response...");
-
-                    String waitResponse = in.readLine();
-                    if (waitResponse.equals("PROCESSING")) {
+                    if (responseTag.equals("OK")) {
                         System.out.println("Server processed request.");
                         processRequest(in);
+                        success = true;
+
+                    } else if (responseTag.equals("WAIT")) {
+                        System.out.println("Waiting for server response...");
+
+                        String waitResponse = in.readLine();
+                        if (waitResponse.equals("PROCESSING")) {
+                            System.out.println("Server processed request.");
+                            processRequest(in);
+                            success = true;
+                        }
+                    } else {
+                        System.out.println("Error response received. Retrying...");
+                        retryCount++;
                     }
+
+                    out.close();
+                    in.close();
+                    socket.close();
                 }
-                out.close();
-                in.close();
-                socket.close();
+
+                if (!success) {
+                    System.out.println("Maximum retries reached. Unable to process request.");
+                }
+                retryCount = 0;
             }
             br.close();
         } catch (FileNotFoundException e) {
@@ -118,6 +131,7 @@ public class GETClient {
             ObjectMapper objectMapper = new ObjectMapper();
             WeatherData responseObject = objectMapper.readValue(jsonResponse.toString(),
                     WeatherData.class);
+
             return responseObject;
         } catch (JsonMappingException e) {
             System.out.println("Error while mapping JSON to object.");
