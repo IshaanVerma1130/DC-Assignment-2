@@ -19,7 +19,7 @@ public class Modifier {
 
             try {
                 if (tempFile.createNewFile()) {
-                    System.out.println("Temp file created successfully.");
+                    System.out.println("Temp file created successfully for PUT.");
                 } else {
                     System.out.println("File already exists.");
                 }
@@ -80,7 +80,7 @@ public class Modifier {
 
             try {
                 if (tempFile.createNewFile()) {
-                    System.out.println("Temp file created successfully.");
+                    System.out.println("Temp file created successfully for Deletion.");
                 } else {
                     System.out.println("File already exists.");
                 }
