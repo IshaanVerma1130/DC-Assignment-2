@@ -44,11 +44,11 @@ jar:
 
 # Compile and run the Java program with arguments
 run-client: compile
-	java -cp $(CLASSPATH):$(OUT_DIR) $(MAIN_CLASS) $(ARGS)
+	java -cp $(CLASSPATH):$(OUT_DIR) $(MAIN_CLASS) $(args)
 
 # Generate test file
 gen-test: compile
-	java -cp $(CLASSPATH):$(OUT_DIR) $(TEST_CLASS) $(ARG)
+	java -cp $(CLASSPATH):$(OUT_DIR) $(TEST_DIR)$(TEST_CLASS) $(arg)
 
 # Generate all test files
 gen-all-tests:
