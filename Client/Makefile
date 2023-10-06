@@ -52,15 +52,15 @@ gen-test: compile
 
 # Generate all test files
 gen-all-tests:
-	@gnome-terminal -- bash -c "make gen-test arg=1"
-	@gnome-terminal -- bash -c "make gen-test arg=2"
-	@gnome-terminal -- bash -c "make gen-test arg=3"
+	@gnome-terminal -- bash -c "make gen-test ARG=1"
+	@gnome-terminal -- bash -c "make gen-test ARG=2"
+	@gnome-terminal -- bash -c "make gen-test ARG=3"
 
 # Compile and run clients in parallel
 run-all-clients:
-	@gnome-terminal -- bash -c "make run-client args=localhost 4567 1"
-	@gnome-terminal -- bash -c "make run-client args=localhost 4567 2"
-	@gnome-terminal -- bash -c "make run-client args=localhost 4567 3"
+	@gnome-terminal -- bash -c "make run-client ARGS=localhost 4567 1"
+	@gnome-terminal -- bash -c "make run-client ARGS=localhost 4567 2"
+	@gnome-terminal -- bash -c "make run-client ARGS=localhost 4567 3"
 
 # Run all tests
 test: gen-all-tests run-all-clients
