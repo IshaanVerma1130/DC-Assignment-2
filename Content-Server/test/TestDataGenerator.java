@@ -21,7 +21,7 @@ public class TestDataGenerator {
         Map<String, String> idCityMap = createIdCityMap();
 
         try {
-            PrintWriter writer = new PrintWriter(new FileWriter("CS-" + CS_ID + ".txt"));
+            PrintWriter writer = new PrintWriter(new FileWriter("resources/CS-" + CS_ID + ".txt"));
 
             for (String id : ids) {
                 String state = idStateMap.get(id);
