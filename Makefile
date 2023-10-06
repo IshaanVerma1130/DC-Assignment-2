@@ -41,4 +41,10 @@ clean_client:
 clean_content_server:
 	$(MAKE) clean $(CONTENT_SERVER_TARGET)
 
+# Run client and content server tests
+test:
+	$(MAKE) run $(AGGREGATION_SERVER_TARGET)
+	$(MAKE) test $(CONTENT_SERVER_TARGET)
+	$(MAKE) test $(CLIENT_TARGET)
+
 .PHONY: all aggregation_server client content_server clean clean_aggregation_server clean_client clean_content_server

@@ -6,9 +6,9 @@ SRC_DIR = src
 
 # Define the classpath for external libraries (JAR files)
 LIB_DIR = lib
+
 # Modify the CLASSPATH variable to include individual JAR files
 CLASSPATH = $(LIB_DIR)/jackson-core-2.15.2.jar:$(LIB_DIR)/jackson-annotations-2.15.2.jar:$(LIB_DIR)/jackson-databind-2.15.2.jar
-
 
 # Define the output directory for compiled classes
 OUT_DIR = out
