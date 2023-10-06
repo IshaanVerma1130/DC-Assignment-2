@@ -48,19 +48,19 @@ run-cs: compile
 
 # Generate test file
 gen-test: compile
-	java -cp $(CLASSPATH):$(OUT_DIR) $(TEST_DIR)$(TEST_CLASS) $(ARG)
+	java -cp $(CLASSPATH):$(OUT_DIR) $(TEST_DIR)/$(TEST_CLASS) $(ARG)
 
 # Generate all test files
 gen-all-tests:
-	@gnome-terminal -- bash -c "make gen-test arg=1"
-	@gnome-terminal -- bash -c "make gen-test arg=2"
-	@gnome-terminal -- bash -c "make gen-test arg=3"
+	@gnome-terminal -- bash -c "make gen-test ARG=1"
+	@gnome-terminal -- bash -c "make gen-test ARG=2"
+	@gnome-terminal -- bash -c "make gen-test ARG=3"
 
 # Compile and run CSs in parallel
 run-all-cs:
-	@gnome-terminal -- bash -c "make run-cs args=localhost 4567 1"
-	@gnome-terminal -- bash -c "make run-cs args=localhost 4567 2"
-	@gnome-terminal -- bash -c "make run-cs args=localhost 4567 3"
+	@gnome-terminal -- bash -c "make run-cs ARGS=localhost 4567 1"
+	@gnome-terminal -- bash -c "make run-cs ARGS=localhost 4567 2"
+	@gnome-terminal -- bash -c "make run-cs ARGS=localhost 4567 3"
 
 # Run all tests
 test: gen-all-tests run-all-cs
