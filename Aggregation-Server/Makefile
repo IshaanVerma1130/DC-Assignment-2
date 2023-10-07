@@ -36,7 +36,7 @@ jar:
 
 # Run the Java program
 run: compile
-	java -cp $(CLASSPATH):$(OUT_DIR) $(MAIN_CLASS)
+	java -cp $(CLASSPATH):$(OUT_DIR) $(SRC_DIR)/$(MAIN_CLASS)
 
 # Clean the compiled files and JAR
 clean:

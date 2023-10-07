@@ -37,7 +37,7 @@ compile: $(SOURCES)
 
 # Compile and run the Java program with arguments
 run-client: compile
-	java -cp $(CLASSPATH):$(OUT_DIR) $(MAIN_CLASS) $(ARGS)
+	java -cp $(CLASSPATH):$(OUT_DIR) $(SRC_DIR)/$(MAIN_CLASS) $(ARGS)
 
 # Run tests
 test:
