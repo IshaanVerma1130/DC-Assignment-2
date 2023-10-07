@@ -89,7 +89,7 @@ public class CS {
                         out.write(requestString.getBytes());
                         out.flush();
 
-                        logger.info("Sending reqeuest to AS.\r\n" + requestString);
+                        logger.info("\r\nSending reqeuest to AS." + requestString);
 
                         String responseTag = in.readLine();
 

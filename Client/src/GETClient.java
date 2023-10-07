@@ -78,7 +78,7 @@ public class GETClient {
                     out.write(requestString.getBytes());
                     out.flush();
 
-                    logger.info("Sending reqeuest to AS.\r\n" + requestString);
+                    logger.info("\r\nSending reqeuest to AS.\r\n" + requestString);
 
                     String responseTag = in.readLine();
 
@@ -119,6 +119,7 @@ public class GETClient {
         } catch (IOException e) {
             logger.severe(e.toString());
         }
+        logger.info("Shutting down Client " + CLIENT_ID);
     }
 
     private static void updateClientTimestamp(int serverTimestamp) {
