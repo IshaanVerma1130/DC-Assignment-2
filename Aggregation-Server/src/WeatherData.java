@@ -1,3 +1,5 @@
+package src;
+
 public class WeatherData {
     private String id;
     private String name;
