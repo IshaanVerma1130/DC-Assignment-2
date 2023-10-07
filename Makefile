@@ -8,6 +8,10 @@ AGGREGATION_SERVER_TARGET = -C $(AGGREGATION_SERVER_DIR)
 CLIENT_TARGET = -C $(CLIENT_DIR)
 CONTENT_SERVER_TARGET = -C $(CONTENT_SERVER_DIR)
 
+# Number of Clients and CSs for testing
+CS = 8
+CLIENT = 8
+
 # Define the default target (all subprojects)
 all: aggregation_server client content_server
 
@@ -44,7 +48,7 @@ clean_content_server:
 # Run client and content server tests
 test:
 	@gnome-terminal -- bash -c "make run -C Aggregation-Server"
-	@gnome-terminal -- bash -c "make test -C Content-Server"
-	@gnome-terminal -- bash -c "make test -C Client"
+	@gnome-terminal -- bash -c "make test ARG='$(CS)' -C Content-Server"
+	@gnome-terminal -- bash -c "make test ARG='$(CLIENT)' -C Client"
 
 .PHONY: all aggregation_server client content_server clean clean_aggregation_server clean_client clean_content_server
