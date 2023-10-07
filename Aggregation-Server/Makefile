@@ -19,9 +19,6 @@ MAIN_CLASS = AggregationServer
 # Define the source files (all .java files in the source directory)
 SOURCES = $(wildcard $(SRC_DIR)/*.java)
 
-# Define the target JAR file
-JAR_FILE = AggregationServer.jar
-
 # Build the project
 all: compile
 
@@ -30,16 +27,12 @@ compile: $(SOURCES)
 	@mkdir -p $(OUT_DIR)
 	$(JAVAC) -cp $(CLASSPATH) -d $(OUT_DIR) $^
 
-# Create a JAR file for the project
-jar:
-	jar cvf $(JAR_FILE) -C $(OUT_DIR) .
-
 # Run the Java program
 run: compile
 	java -cp $(CLASSPATH):$(OUT_DIR) $(SRC_DIR)/$(MAIN_CLASS)
 
 # Clean the compiled files and JAR
 clean:
-	rm -rf $(OUT_DIR) $(JAR_FILE)
+	rm -rf $(OUT_DIR)
 
-.PHONY: all compile jar run clean
+.PHONY: all compile run clean
