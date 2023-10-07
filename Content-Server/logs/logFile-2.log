@@ -1,2 +1,6 @@
-Oct 08, 2023 1:59:39 AM src.CS main
+Oct 08, 2023 4:37:57 AM src.CS main
 INFO: Log File for CS 2
+Oct 08, 2023 4:37:59 AM src.CS main
+SEVERE: java.net.ConnectException: Connection refused: connect
+Oct 08, 2023 4:37:59 AM src.CS main
+INFO: CS 2 shutting down.

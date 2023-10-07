@@ -2,20 +2,27 @@ package test;
 
 import java.io.File;
 import java.io.IOException;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import src.CS;
 
 public class TestCS {
     public static void main(String[] args) {
-        int numberOfClient = 8;
-        String[][] clientArgs = new String[numberOfClient][3];
+        int numberOfCS = 8;
+
+        if (args.length == 1) {
+            numberOfCS = Integer.parseInt(args[0]);
+        }
+
+        int numThreads = 6;
 
         String SERVER_URL = "localhost";
         String PORT = "4567";
 
-        for (int i = 1; i <= numberOfClient; i++) {
+        ExecutorService threadPool = Executors.newFixedThreadPool(numThreads);
+
+        for (int i = 1; i <= numberOfCS; i++) {
             String[] arr = { SERVER_URL, PORT, Integer.toString(i) };
-            clientArgs[i - 1] = arr;
 
             try {
                 String resourceFilePath = "resources/CS-" + i + ".txt";
@@ -28,27 +35,8 @@ public class TestCS {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            threadPool.submit(() -> CS.main(arr));
         }
-
-        Thread[] threads = new Thread[numberOfClient];
-
-        for (int i = 0; i < numberOfClient; i++) {
-            final int index = i;
-            threads[i] = new Thread(() -> {
-                CS.main(clientArgs[index]);
-            });
-        }
-
-        for (Thread thread : threads) {
-            thread.start();
-        }
-
-        for (Thread thread : threads) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        threadPool.shutdown();
     }
 }

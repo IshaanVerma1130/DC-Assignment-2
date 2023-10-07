@@ -1,6 +1,7 @@
 package src;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
@@ -111,12 +112,12 @@ public class GETClient {
                 retryCount = 0;
             }
             br.close();
+        } catch (ConnectException e) {
+            logger.severe(e.toString());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            logger.severe(e.getMessage());
+            logger.severe(e.toString());
         } catch (IOException e) {
-            e.printStackTrace();
-            logger.severe(e.getMessage());
+            logger.severe(e.toString());
         }
     }
 

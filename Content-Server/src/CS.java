@@ -1,6 +1,7 @@
 package src;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.List;
@@ -122,11 +123,11 @@ public class CS {
                     retryCount = 0;
                 }
             }
+        } catch (ConnectException e) {
+            logger.severe(e.toString());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             logger.severe(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
             logger.severe(e.getMessage());
         }
         logger.info("CS " + CS_ID + " shutting down.");
