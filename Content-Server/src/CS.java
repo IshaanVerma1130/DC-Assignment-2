@@ -44,13 +44,17 @@ public class CS {
             e.printStackTrace();
         }
 
-        // ConsoleHandler consoleHandler = new ConsoleHandler();
-        // consoleHandler.setLevel(Level.INFO);
-        // logger.addHandler(consoleHandler);
+        ConsoleHandler consoleHandler = new ConsoleHandler();
+        consoleHandler.setLevel(Level.INFO);
+        logger.addHandler(consoleHandler);
 
-        String SERVER_URL = args[0];
-        Integer PORT = Integer.parseInt(args[1]);
-        Integer CS_ID = Integer.parseInt(args[2]);
+        // String SERVER_URL = args[0];
+        // Integer PORT = Integer.parseInt(args[1]);
+        // Integer CS_ID = Integer.parseInt(args[2]);
+
+        String SERVER_URL = "localhost";
+        Integer PORT = 4567;
+        Integer CS_ID = 1;
 
         int maxRetries = 3;
         int retryCount = 0;
