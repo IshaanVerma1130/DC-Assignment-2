@@ -61,6 +61,8 @@ public class CS {
         int maxRetries = 3;
         int retryCount = 0;
 
+        logger.info("Starting CS " + CS_ID);
+
         try {
             List<WeatherData> entries = Utils.generateJson(CS_ID);
 
@@ -80,8 +82,6 @@ public class CS {
                         Socket socket = new Socket(SERVER_URL, PORT);
                         OutputStream out = socket.getOutputStream();
                         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-                        logger.info("Starting CS " + CS_ID);
 
                         String requestString = Utils.generatePostRequest(SERVER_URL, clientTimestamp,
                                 jsonObject.toString());
