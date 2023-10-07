@@ -45,10 +45,16 @@ clean_client:
 clean_content_server:
 	$(MAKE) clean $(CONTENT_SERVER_TARGET)
 
+# Run Aggregation Server
+run-as:
+	@gnome-terminal -- bash -c "make run -C Aggregation-Server"
+
 # Run client and content server tests
 run-test:
-	@gnome-terminal -- bash -c "make run -C Aggregation-Server"
 	@gnome-terminal -- bash -c "make run-test ARG='$(CS)' -C Content-Server"
 	@gnome-terminal -- bash -c "make run-test ARG='$(CLIENT)' -C Client"
+
+# Run AS and tests
+run: run-as run-test
 
 .PHONY: all aggregation_server client content_server clean clean_aggregation_server clean_client clean_content_server
