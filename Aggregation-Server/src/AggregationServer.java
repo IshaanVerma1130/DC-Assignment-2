@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+import java.util.logging.Handler;
 
 public class AggregationServer {
     private static long lamportTimestamp = 1;
@@ -19,9 +24,38 @@ public class AggregationServer {
 
     private static final Lock lamportLock = new ReentrantLock();
     private static final Condition queueNotEmpty = lamportLock.newCondition();
+    private static Logger logger = null;
 
     public static void main(String[] args) {
         int PORT = 4567;
+
+        try {
+            logger = Logger.getLogger(AggregationServer.class.getName());
+
+            String logFilePath = "logs/logFile.log";
+            File yourFile = new File(logFilePath);
+            yourFile.createNewFile();
+
+            Handler logHandler = new FileHandler(logFilePath);
+
+            // Set the desired logging level for the FileHandler
+            logHandler.setLevel(Level.INFO);
+
+            // Create a SimpleFormatter to format log messages
+            SimpleFormatter formatter = new SimpleFormatter();
+
+            // Assign the formatter to the FileHandler
+            logHandler.setFormatter(formatter);
+
+            // Add the FileHandler to the Logger
+            logger.addHandler(logHandler);
+
+            logger.info("Log File for Aggregation Server");
+
+        } catch (IOException e) {
+            System.out.println("Error creating logger.");
+            e.printStackTrace();
+        }
 
         if (args.length > 0 && args.length == 1) {
             PORT = Integer.parseInt(args[0]);
@@ -32,13 +66,15 @@ public class AggregationServer {
         ScheduledExecutorService deletionScheduler = Executors.newScheduledThreadPool(1);
 
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            System.out.println("Server listening on port " + PORT);
+            logger.info("Server listening on port " + PORT);
             for (int i = 0; i < NUM_THREADS; i++) {
                 Thread processorThread = new Thread(new RequestProcessor());
                 processorThread.start();
+                logger.info("Starting processing thread No. " + i);
             }
 
             deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 30, TimeUnit.SECONDS);
+            logger.info("Starting periodic deletion thread");
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
@@ -46,6 +82,7 @@ public class AggregationServer {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            logger.severe(e.getMessage());
         } finally {
             executor.shutdown();
         }
@@ -85,7 +122,6 @@ public class AggregationServer {
         public void run() {
             BufferedReader in = null;
             try {
-                System.out.println("New connection");
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
                 String inputLine;
@@ -119,31 +155,33 @@ public class AggregationServer {
 
                 if ("GET".equalsIgnoreCase(requestMethod)) {
                     String id = headers.get("CITY-ID");
-                    handleGetRequest(lamportTimestamp, clientTimestamp, id, clientSocket);
+                    logger.info("New Client Connection. Requested City: " + id);
+                    handleGetRequest(clientTimestamp, id, clientSocket);
                 } else if ("PUT".equalsIgnoreCase(requestMethod)) {
                     char[] body = new char[Integer.parseInt(headers.get("Content-Length"))];
                     in.read(body);
                     String jsonRequest = new String(body);
-                    handlePutRequest(lamportTimestamp, clientTimestamp, jsonRequest, clientSocket);
+                    logger.info("New CS Connection. JSON Body:\r\n" + jsonRequest);
+                    handlePutRequest(clientTimestamp, jsonRequest, clientSocket);
                 }
             } catch (SocketException e) {
-                System.out.println("Connection to socket closed unexpectedly.");
+                logger.severe("Connection to socket closed unexpectedly.\r\n" + e.getMessage());
                 try {
                     in.close();
                     clientSocket.close();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+                logger.severe(e.getMessage());
             } finally {
                 lamportLock.unlock();
             }
         }
     }
 
-    private static void handleGetRequest(long lamportTimestamp, long clientTimestamp, String id,
+    private static void handleGetRequest(long clientTimestamp, String id,
             Socket clientSocket) {
         try {
             OutputStream out = clientSocket.getOutputStream();
@@ -159,20 +197,21 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 clientSocket.close();
+                logger.info("Response sent to Client immidiately");
             } else {
                 out.write("WAIT\r\n".getBytes());
-                enqueueRequest("GET", lamportTimestamp, id, clientSocket);
+                enqueueRequest("GET", clientTimestamp, id, clientSocket);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void handlePutRequest(long timestamp, long clientTimestamp, String jsonRequest,
+    private static void handlePutRequest(long clientTimestamp, String jsonRequest,
             Socket clientSocket) {
         try {
             OutputStream out = clientSocket.getOutputStream();
-            if (timestamp >= clientTimestamp) {
+            if (lamportTimestamp >= clientTimestamp) {
                 Modifier.putEntry(jsonRequest);
                 String jsonResponse = "HTTP/1.1 200 OK\r\n" +
                         "TIME-STAMP: " + lamportTimestamp + "\r\n";
@@ -180,9 +219,10 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 clientSocket.close();
+                logger.info("Response sent to CS immidiately");
             } else {
                 out.write("WAIT\r\n".getBytes());
-                enqueueRequest("PUT", timestamp, jsonRequest, clientSocket);
+                enqueueRequest("PUT", clientTimestamp, jsonRequest, clientSocket);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -241,7 +281,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 request.clientSocket.close();
-
+                logger.info("Response sent to Client after queueing");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -258,6 +298,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 request.clientSocket.close();
+                logger.info("Response sent to CS after queueing");
             } catch (IOException e) {
                 e.printStackTrace();
             }

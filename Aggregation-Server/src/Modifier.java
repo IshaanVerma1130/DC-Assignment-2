@@ -17,15 +17,7 @@ public class Modifier {
             File dataFile = new File(DATA_FILE_PATH);
             File tempFile = new File(TEMP_FILE_PATH);
 
-            try {
-                if (tempFile.createNewFile()) {
-                    System.out.println("Temp file created successfully for PUT.");
-                } else {
-                    System.out.println("File already exists.");
-                }
-            } catch (IOException e) {
-                System.err.println("An error occurred while creating the file: " + e.getMessage());
-            }
+            tempFile.createNewFile();
 
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
@@ -37,12 +29,10 @@ public class Modifier {
             Parser.put(weatherDataList, body);
             objectMapper.writeValue(tempFile, weatherDataList);
 
-            if (tempFile.renameTo(dataFile)) {
-                System.out.println("Data updated successfully.");
-            } else {
-                System.err.println("Failed to update data.");
-            }
-        } catch (JsonMappingException e) {
+            tempFile.renameTo(dataFile);
+        } catch (
+
+        JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -52,7 +42,7 @@ public class Modifier {
     }
 
     public static String getEntry(String id) {
-        String response = null;
+        String response = "No entry for City ID: " + id;
         try {
 
             File dataFile = new File(DATA_FILE_PATH);
@@ -78,15 +68,7 @@ public class Modifier {
             File dataFile = new File(DATA_FILE_PATH);
             File tempFile = new File(TEMP_FILE_PATH);
 
-            try {
-                if (tempFile.createNewFile()) {
-                    System.out.println("Temp file created successfully for Deletion.");
-                } else {
-                    System.out.println("File already exists.");
-                }
-            } catch (IOException e) {
-                System.err.println("An error occurred while creating the file: " + e.getMessage());
-            }
+            tempFile.createNewFile();
 
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
@@ -111,7 +93,7 @@ public class Modifier {
             objectMapper.writeValue(tempFile, newWeatherDataList);
 
             if (tempFile.renameTo(dataFile)) {
-                System.out.println("Data updated successfully.");
+                System.out.println("Periodic deletion complete.");
             } else {
                 System.err.println("Failed to delete data.");
             }

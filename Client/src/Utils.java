@@ -1,3 +1,5 @@
+package src;
+
 public class Utils {
     static public String generateGetRequest(String url, Integer timestamp, String cityId) {
         String req = "GET /"

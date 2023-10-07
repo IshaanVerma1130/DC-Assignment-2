@@ -26,7 +26,7 @@ public class TestDataGenerator {
             }
 
             writer.close();
-            System.out.println("Test data generated successfully.");
+            System.out.println("Test data generated successfully for Client " + CLIENT_ID);
 
         } catch (IOException e) {
             e.printStackTrace();
