@@ -75,7 +75,7 @@ public class AggregationServer {
                 logger.info("Starting processing thread No. " + i);
             }
 
-            deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 30, TimeUnit.SECONDS);
+            deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 45, TimeUnit.SECONDS);
             logger.info("Starting periodic deletion thread");
 
             while (true) {

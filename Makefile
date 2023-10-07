@@ -53,6 +53,7 @@ run-as:
 run-test:
 	@sleep 5
 	@gnome-terminal -- bash -c "make run-test ARG='$(CS)' -C Content-Server"
+	@sleep 2
 	@gnome-terminal -- bash -c "make run-test ARG='$(CLIENT)' -C Client"
 
 # Run AS and tests

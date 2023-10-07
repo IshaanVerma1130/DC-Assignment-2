@@ -104,6 +104,12 @@ public class GETClient {
                     out.close();
                     in.close();
                     socket.close();
+
+                    try {
+                        Thread.sleep(1000); // Sleep for 1000 milliseconds (1 second)
+                    } catch (InterruptedException e) {
+                        // Handle the InterruptedException if needed
+                    }
                 }
 
                 if (!success) {
