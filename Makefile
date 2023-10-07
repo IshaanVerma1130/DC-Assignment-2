@@ -46,9 +46,9 @@ clean_content_server:
 	$(MAKE) clean $(CONTENT_SERVER_TARGET)
 
 # Run client and content server tests
-test:
+run-test:
 	@gnome-terminal -- bash -c "make run -C Aggregation-Server"
-	@gnome-terminal -- bash -c "make test ARG='$(CS)' -C Content-Server"
-	@gnome-terminal -- bash -c "make test ARG='$(CLIENT)' -C Client"
+	@gnome-terminal -- bash -c "make run-test ARG='$(CS)' -C Content-Server"
+	@gnome-terminal -- bash -c "make run-test ARG='$(CLIENT)' -C Client"
 
 .PHONY: all aggregation_server client content_server clean clean_aggregation_server clean_client clean_content_server

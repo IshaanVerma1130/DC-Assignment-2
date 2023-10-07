@@ -40,7 +40,7 @@ run-client: compile
 	java -cp $(CLASSPATH):$(OUT_DIR) $(SRC_DIR)/$(MAIN_CLASS) $(ARGS)
 
 # Run tests
-test:
+run-test:
 	java -cp $(CLASSPATH):$(OUT_DIR) $(TEST_DIR)/$(TEST_CLASS) $(ARG)
 	
 # Clean the compiled files and JAR
