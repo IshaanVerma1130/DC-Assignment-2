@@ -49,8 +49,9 @@ clean_content_server:
 run-as:
 	@gnome-terminal -- bash -c "make run -C Aggregation-Server"
 
-# Run client and content server tests
+# Run client and content server tests after 5 seconds
 run-test:
+	@sleep 5
 	@gnome-terminal -- bash -c "make run-test ARG='$(CS)' -C Content-Server"
 	@gnome-terminal -- bash -c "make run-test ARG='$(CLIENT)' -C Client"
 
