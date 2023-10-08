@@ -5,6 +5,7 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -70,49 +71,59 @@ public class GETClient {
                 input = input.trim();
                 boolean success = false;
 
-                while (!success && retryCount < maxRetries) {
-                    Socket socket = new Socket(SERVER_URL, PORT);
-                    OutputStream out = socket.getOutputStream();
-                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-                    // Generate and send a GET request to the server
-                    String requestString = Utils.generateGetRequest(SERVER_URL, clientTimestamp, input);
-
-                    out.write(requestString.getBytes());
-                    out.flush();
-
-                    logger.info("\r\nSending request to AS.\r\n" + requestString);
-
-                    String responseTag = in.readLine();
-
-                    if (responseTag.equals("OK")) {
-                        logger.info("Server processed request immediately.\r\n");
-                        processRequest(in, logger);
-                        success = true;
-
-                    } else if (responseTag.equals("WAIT")) {
-                        logger.info("Waiting for server.\r\n");
-
-                        String waitResponse = in.readLine();
-                        if (waitResponse.equals("PROCESSING")) {
-                            processRequest(in, logger);
-                            logger.info(
-                                    "Client updated timestamp after processing request: " + clientTimestamp + "\r\n");
-                            success = true;
-                        }
-                    } else {
-                        logger.severe("Error processing request.");
-                        retryCount++;
-                    }
-
-                    out.close();
-                    in.close();
-                    socket.close();
-
+                while (!success && retryCount <= maxRetries) {
                     try {
-                        Thread.sleep(1000); // Sleep for 1000 milliseconds (1 second)
-                    } catch (InterruptedException e) {
-                        // Handle the InterruptedException if needed
+                        Socket socket = new Socket(SERVER_URL, PORT);
+                        OutputStream out = socket.getOutputStream();
+                        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+                        // Generate and send a GET request to the server
+                        String requestString = Utils.generateGetRequest(SERVER_URL, clientTimestamp, input);
+
+                        out.write(requestString.getBytes());
+                        out.flush();
+
+                        logger.info("\r\nSending request to AS.\r\n" + requestString);
+
+                        String responseTag = in.readLine();
+
+                        if (responseTag.equals("OK")) {
+                            logger.info("Server processed request immediately.\r\n");
+                            processRequest(in, logger);
+                            success = true;
+
+                        } else if (responseTag.equals("WAIT")) {
+                            logger.info("Waiting for server.\r\n");
+
+                            String waitResponse = in.readLine();
+                            if (waitResponse.equals("PROCESSING")) {
+                                processRequest(in, logger);
+                                logger.info(
+                                        "Client updated timestamp after processing request: " + clientTimestamp
+                                                + "\r\n");
+                                success = true;
+                            }
+                        } else {
+                            logger.severe("Error processing request.");
+                            retryCount++;
+                        }
+
+                        out.close();
+                        in.close();
+                        socket.close();
+
+                        // Simulating network delay
+                        try {
+                            Random random = new Random();
+                            // Generate a random integer between 1000 and 2000
+                            int randomNumber = random.nextInt(1001) + 1000;
+                            // Sleep
+                            Thread.sleep(randomNumber);
+                        } catch (InterruptedException e) {
+                        }
+                    } catch (ConnectException e) {
+                        retryCount++;
+                        logger.severe("Retry Count: " + retryCount + "\r\n" + e.toString());
                     }
                 }
 
@@ -122,8 +133,6 @@ public class GETClient {
                 retryCount = 0;
             }
             br.close();
-        } catch (ConnectException e) {
-            logger.severe(e.toString());
         } catch (FileNotFoundException e) {
             logger.severe(e.toString());
         } catch (IOException e) {

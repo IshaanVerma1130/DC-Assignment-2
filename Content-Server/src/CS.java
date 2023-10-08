@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -88,7 +89,7 @@ public class CS {
                 for (JsonNode jsonObject : jsonEntries) {
                     boolean success = false;
 
-                    while (!success && retryCount < maxRetries) {
+                    while (!success && retryCount <= maxRetries) {
                         try {
                             // Establish a socket connection to the server
                             Socket socket = new Socket(SERVER_URL, PORT);
@@ -136,15 +137,18 @@ public class CS {
                             in.close();
                             socket.close();
 
+                            // Simulating network delay
                             try {
-                                // Sleep for 1000 milliseconds (1 second)
-                                Thread.sleep(1000);
+                                Random random = new Random();
+                                // Generate a random integer between 1000 and 2000
+                                int randomNumber = random.nextInt(1001) + 1000;
+                                // Sleep
+                                Thread.sleep(randomNumber);
                             } catch (InterruptedException e) {
-                                // Handle the InterruptedException if needed
                             }
                         } catch (ConnectException e) {
-                            logger.severe("Retry Count: " + retryCount + "\r\n" + e.toString());
                             retryCount++;
+                            logger.severe("Retry Count: " + retryCount + "\r\n" + e.toString());
                         }
                     }
 
