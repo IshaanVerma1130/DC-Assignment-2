@@ -12,6 +12,8 @@ public class TestDataGenerator {
             System.out.println("Usage: java TestDataGenerator <Client ID>");
         }
 
+        int numOfEntries = 15;
+
         String CLIENT_ID = args[0];
 
         String[] ids = { "IDS60901", "IDS60902", "IDS60903", "IDS60904", "IDS60905", "IDS60906", "IDS60907", "IDS60908",
@@ -20,7 +22,7 @@ public class TestDataGenerator {
         try {
             PrintWriter writer = new PrintWriter(new FileWriter("resources/Client-" + CLIENT_ID + ".txt"));
 
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < numOfEntries; i++) {
                 int rnd = new Random().nextInt(ids.length);
                 writer.println(ids[rnd]);
             }
