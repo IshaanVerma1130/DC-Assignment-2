@@ -75,8 +75,8 @@ public class AggregationServer {
                 logger.info("Starting processing thread No. " + i + "\r\n");
             }
 
-            deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 45, TimeUnit.SECONDS);
-            logger.info("Starting periodic deletion thread. Deletion time it set to 45 seconds.\r\n");
+            deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 30, TimeUnit.SECONDS);
+            logger.info("Starting periodic deletion thread. Deletion time is set to 30 seconds.\r\n");
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
