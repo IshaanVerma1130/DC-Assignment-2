@@ -27,5 +27,5 @@
 
 ### Notes:
 
-- By default for testing, `number of Clients` = 8 and `number of CS` = 8. This can be changed from the `makefile` using the variables `CS` and `Client`
+- By default for testing, `number of Clients = 8` and `number of CS = 8`. This can be changed from the `makefile` using the variables `CS` and `CLIENT`
 - All JAR files have already been included in the lib folder in every project.
