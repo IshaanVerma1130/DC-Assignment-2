@@ -89,7 +89,7 @@ public class CS {
                 for (JsonNode jsonObject : jsonEntries) {
                     boolean success = false;
 
-                    while (!success && retryCount <= maxRetries) {
+                    while (!success && retryCount < maxRetries) {
                         try {
                             // Establish a socket connection to the server
                             Socket socket = new Socket(SERVER_URL, PORT);
@@ -140,8 +140,8 @@ public class CS {
                             // Simulating network delay
                             try {
                                 Random random = new Random();
-                                // Generate a random integer between 1000 and 2000
-                                int randomNumber = random.nextInt(1001) + 1000;
+                                // Generate a random integer between 2000 and 3000
+                                int randomNumber = random.nextInt(2001) + 1000;
                                 // Sleep
                                 Thread.sleep(randomNumber);
                             } catch (InterruptedException e) {

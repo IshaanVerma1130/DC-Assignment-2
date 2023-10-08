@@ -71,7 +71,7 @@ public class GETClient {
                 input = input.trim();
                 boolean success = false;
 
-                while (!success && retryCount <= maxRetries) {
+                while (!success && retryCount < maxRetries) {
                     try {
                         Socket socket = new Socket(SERVER_URL, PORT);
                         OutputStream out = socket.getOutputStream();
@@ -115,8 +115,8 @@ public class GETClient {
                         // Simulating network delay
                         try {
                             Random random = new Random();
-                            // Generate a random integer between 1000 and 2000
-                            int randomNumber = random.nextInt(1001) + 1000;
+                            // Generate a random integer between 2000 and 3000
+                            int randomNumber = random.nextInt(2001) + 1000;
                             // Sleep
                             Thread.sleep(randomNumber);
                         } catch (InterruptedException e) {
