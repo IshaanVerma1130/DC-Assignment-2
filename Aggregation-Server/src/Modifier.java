@@ -1,9 +1,11 @@
 package src;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
 import java.io.File;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -70,8 +72,17 @@ public class Modifier {
         return response;
     }
 
+    public static String getCurrentTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy h:mm:ss a");
+        Date currentDate = new Date();
+        String formattedDate = sdf.format(currentDate);
+
+        return formattedDate;
+    }
+
     public static void removeOldData() {
         try {
+            System.out.println(getCurrentTime());
             File dataFile = new File(DATA_FILE_PATH);
             File tempFile = new File(TEMP_FILE_PATH);
 
@@ -100,7 +111,7 @@ public class Modifier {
             objectMapper.writeValue(tempFile, newWeatherDataList);
 
             if (tempFile.renameTo(dataFile)) {
-                System.out.println("Periodic deletion complete.");
+                System.out.println("Periodic deletion complete.\r\n");
             } else {
                 System.err.println("Failed to delete data.");
             }
