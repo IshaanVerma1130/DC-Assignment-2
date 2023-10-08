@@ -1,244 +1,668 @@
-Oct 08, 2023 2:41:25 PM src.GETClient main
+Oct 08, 2023 5:00:42 PM src.GETClient main
 INFO: Log File for Client 2
-Oct 08, 2023 2:41:26 PM src.GETClient main
+
+Oct 08, 2023 5:00:42 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 0
-CITY-ID: IDS60902
+CITY-ID: IDS60906
 
 
-Oct 08, 2023 2:41:26 PM src.GETClient main
+Oct 08, 2023 5:00:42 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:27 PM src.GETClient main
+
+Oct 08, 2023 5:00:42 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60906
+name: null
+state: null
+time_zone: null
+lat: null
+lon: null
+local_date_time: null
+local_date_time_full: null
+air_temp: null
+apparent_t: null
+cloud: null
+dewpt: null
+press: null
+rel_hum: null
+wind_dir: null
+wind_spd_kmh: null
+wind_spd_kt: null
+
+Oct 08, 2023 5:00:43 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
-TIME-STAMP: 23
-CITY-ID: IDS60902
+TIME-STAMP: 22
+CITY-ID: IDS60906
 
 
-Oct 08, 2023 2:41:27 PM src.GETClient main
+Oct 08, 2023 5:00:43 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:28 PM src.GETClient main
+
+Oct 08, 2023 5:00:43 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60906
+name: null
+state: null
+time_zone: null
+lat: null
+lon: null
+local_date_time: null
+local_date_time_full: null
+air_temp: null
+apparent_t: null
+cloud: null
+dewpt: null
+press: null
+rel_hum: null
+wind_dir: null
+wind_spd_kmh: null
+wind_spd_kt: null
+
+Oct 08, 2023 5:00:44 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
-TIME-STAMP: 41
-CITY-ID: IDS60904
-
-
-Oct 08, 2023 2:41:28 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:29 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 57
-CITY-ID: IDS60902
-
-
-Oct 08, 2023 2:41:29 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:30 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 70
-CITY-ID: IDS60902
-
-
-Oct 08, 2023 2:41:30 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:31 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 82
-CITY-ID: IDS60905
-
-
-Oct 08, 2023 2:41:31 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:32 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 94
-CITY-ID: IDS60902
-
-
-Oct 08, 2023 2:41:32 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:33 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 98
-CITY-ID: IDS60902
-
-
-Oct 08, 2023 2:41:33 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:34 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 111
-CITY-ID: IDS60903
-
-
-Oct 08, 2023 2:41:34 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:35 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 123
-CITY-ID: IDS60902
-
-
-Oct 08, 2023 2:41:35 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:36 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 131
+TIME-STAMP: 45
 CITY-ID: IDS60909
 
 
-Oct 08, 2023 2:41:36 PM src.GETClient main
+Oct 08, 2023 5:00:44 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:37 PM src.GETClient main
+
+Oct 08, 2023 5:00:44 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60909
+name: null
+state: null
+time_zone: null
+lat: null
+lon: null
+local_date_time: null
+local_date_time_full: null
+air_temp: null
+apparent_t: null
+cloud: null
+dewpt: null
+press: null
+rel_hum: null
+wind_dir: null
+wind_spd_kmh: null
+wind_spd_kt: null
+
+Oct 08, 2023 5:00:45 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
-TIME-STAMP: 139
+TIME-STAMP: 61
+CITY-ID: IDS60901
+
+
+Oct 08, 2023 5:00:45 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:45 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60901
+name: Adelaide
+state: SA
+time_zone: EST
+lat: -10.231594406136566
+lon: -110.1638467408522
+local_date_time: null
+local_date_time_full: 20233854165724
+air_temp: 38.89570760837646
+apparent_t: -5.005176613420284
+cloud: Mostly cloudy
+dewpt: 4.057059749340098
+press: 974.5179669863481
+rel_hum: 76
+wind_dir: E
+wind_spd_kmh: 3
+wind_spd_kt: 0
+
+Oct 08, 2023 5:00:46 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 73
+CITY-ID: IDS60901
+
+
+Oct 08, 2023 5:00:46 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:46 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60901
+name: Adelaide
+state: SA
+time_zone: EST
+lat: -10.231594406136566
+lon: -110.1638467408522
+local_date_time: null
+local_date_time_full: 20233854165724
+air_temp: 38.89570760837646
+apparent_t: -5.005176613420284
+cloud: Mostly cloudy
+dewpt: 4.057059749340098
+press: 974.5179669863481
+rel_hum: 76
+wind_dir: E
+wind_spd_kmh: 3
+wind_spd_kt: 0
+
+Oct 08, 2023 5:00:47 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 88
+CITY-ID: IDS60901
+
+
+Oct 08, 2023 5:00:47 PM src.GETClient main
+INFO: Waiting for server.
+
+Oct 08, 2023 5:00:47 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60901
+name: Adelaide
+state: SA
+time_zone: EST
+lat: -10.231594406136566
+lon: -110.1638467408522
+local_date_time: null
+local_date_time_full: 20233854165724
+air_temp: 38.89570760837646
+apparent_t: -5.005176613420284
+cloud: Mostly cloudy
+dewpt: 4.057059749340098
+press: 974.5179669863481
+rel_hum: 76
+wind_dir: E
+wind_spd_kmh: 3
+wind_spd_kt: 0
+
+Oct 08, 2023 5:00:47 PM src.GETClient main
+INFO: Client updated timestamp after processing request: 89
+
+Oct 08, 2023 5:00:48 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 97
+CITY-ID: IDS60909
+
+
+Oct 08, 2023 5:00:48 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:48 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60909
+name: Geelong
+state: VIC
+time_zone: CST
+lat: -68.43499376711127
+lon: 162.46317545202743
+local_date_time: null
+local_date_time_full: 2023645563116
+air_temp: -5.284819155830647
+apparent_t: 9.076718351787296
+cloud: Partly cloudy
+dewpt: 17.479089696510837
+press: 992.53838782958
+rel_hum: 7
+wind_dir: NE
+wind_spd_kmh: 22
+wind_spd_kt: 17
+
+Oct 08, 2023 5:00:49 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 108
+CITY-ID: IDS60902
+
+
+Oct 08, 2023 5:00:49 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:49 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60902
+name: Sydney
+state: NSW
+time_zone: GMT
+lat: -79.54015652996225
+lon: -176.3607654881395
+local_date_time: null
+local_date_time_full: 20238182212337
+air_temp: 38.39646033515628
+apparent_t: 23.883085223034072
+cloud: Overcast
+dewpt: 22.486584905824927
+press: 971.0614458410861
+rel_hum: 39
+wind_dir: NE
+wind_spd_kmh: 1
+wind_spd_kt: 12
+
+Oct 08, 2023 5:00:50 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 117
+CITY-ID: IDS60904
+
+
+Oct 08, 2023 5:00:50 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:50 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60904
+name: Melbourne
+state: VIC
+time_zone: JST
+lat: -88.16463829935773
+lon: 15.029680361183608
+local_date_time: null
+local_date_time_full: 2023157741335
+air_temp: 15.374529911767947
+apparent_t: 13.272134767617736
+cloud: Mostly cloudy
+dewpt: 5.656729659688967
+press: 1070.7120924264182
+rel_hum: 85
+wind_dir: NE
+wind_spd_kmh: 5
+wind_spd_kt: 14
+
+Oct 08, 2023 5:00:51 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 122
+CITY-ID: IDS60905
+
+
+Oct 08, 2023 5:00:51 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:51 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60905
+name: Perth
+state: WA
+time_zone: GMT
+lat: -1.755307223531787
+lon: 35.87339356772037
+local_date_time: null
+local_date_time_full: 20238476101145
+air_temp: 12.371146841234047
+apparent_t: 33.47281750982357
+cloud: Mostly cloudy
+dewpt: 7.24329570163011
+press: 954.6317990332207
+rel_hum: 18
+wind_dir: E
+wind_spd_kmh: 29
+wind_spd_kt: 16
+
+Oct 08, 2023 5:00:52 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 130
 CITY-ID: IDS60908
 
 
-Oct 08, 2023 2:41:37 PM src.GETClient main
+Oct 08, 2023 5:00:52 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:38 PM src.GETClient main
+
+Oct 08, 2023 5:00:52 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60908
+name: Gold Coast
+state: QLD
+time_zone: CST
+lat: -50.884519734109745
+lon: -104.3242121307855
+local_date_time: null
+local_date_time_full: 2023548716132
+air_temp: 20.013101870103455
+apparent_t: 12.779760514673349
+cloud: Clear
+dewpt: 11.691943684273575
+press: 988.1737453881508
+rel_hum: 42
+wind_dir: SW
+wind_spd_kmh: 15
+wind_spd_kt: 16
+
+Oct 08, 2023 5:00:53 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 134
+CITY-ID: IDS60903
+
+
+Oct 08, 2023 5:00:53 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:53 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60903
+name: Brisbane
+state: QLD
+time_zone: PST
+lat: -70.83844648762252
+lon: -105.78026745484617
+local_date_time: null
+local_date_time_full: 20231214801119
+air_temp: 26.231126080581213
+apparent_t: 37.93400652477434
+cloud: Clear
+dewpt: 0.8008515398961791
+press: 971.292920583075
+rel_hum: 12
+wind_dir: S
+wind_spd_kmh: 28
+wind_spd_kt: 13
+
+Oct 08, 2023 5:00:54 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 142
-CITY-ID: IDS60907
+CITY-ID: IDS60902
 
 
-Oct 08, 2023 2:41:38 PM src.GETClient main
+Oct 08, 2023 5:00:54 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:39 PM src.GETClient main
+
+Oct 08, 2023 5:00:54 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60902
+name: Sydney
+state: NSW
+time_zone: CST
+lat: 12.87497691691371
+lon: -174.2833693761945
+local_date_time: null
+local_date_time_full: 202310271131421
+air_temp: 7.148891611056278
+apparent_t: -2.1354767617619252
+cloud: Mostly cloudy
+dewpt: 12.185182957906456
+press: 981.8463098694488
+rel_hum: 66
+wind_dir: E
+wind_spd_kmh: 0
+wind_spd_kt: 16
+
+Oct 08, 2023 5:00:55 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
-TIME-STAMP: 152
+TIME-STAMP: 154
+CITY-ID: IDS60902
+
+
+Oct 08, 2023 5:00:55 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:55 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60902
+name: Sydney
+state: NSW
+time_zone: CST
+lat: 12.87497691691371
+lon: -174.2833693761945
+local_date_time: null
+local_date_time_full: 202310271131421
+air_temp: 7.148891611056278
+apparent_t: -2.1354767617619252
+cloud: Mostly cloudy
+dewpt: 12.185182957906456
+press: 981.8463098694488
+rel_hum: 66
+wind_dir: E
+wind_spd_kmh: 0
+wind_spd_kt: 16
+
+Oct 08, 2023 5:00:56 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 162
+CITY-ID: IDS60905
+
+
+Oct 08, 2023 5:00:56 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:56 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60905
+name: Perth
+state: WA
+time_zone: AEDT
+lat: 80.98006600396687
+lon: 173.7084020686861
+local_date_time: null
+local_date_time_full: 20239628192932
+air_temp: -4.104280505086385
+apparent_t: 34.78859858386215
+cloud: Overcast
+dewpt: 7.120984237775826
+press: 1039.8061691895302
+rel_hum: 9
+wind_dir: E
+wind_spd_kmh: 7
+wind_spd_kt: 5
+
+Oct 08, 2023 5:00:57 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 170
+CITY-ID: IDS60901
+
+
+Oct 08, 2023 5:00:57 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:57 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60901
+name: Adelaide
+state: SA
+time_zone: IST
+lat: -47.42695057117728
+lon: -140.14675067405267
+local_date_time: null
+local_date_time_full: 2023956451348
+air_temp: 19.430135127333067
+apparent_t: 27.188501540275155
+cloud: Overcast
+dewpt: 8.482155129539727
+press: 989.7359235108249
+rel_hum: 73
+wind_dir: SW
+wind_spd_kmh: 14
+wind_spd_kt: 4
+
+Oct 08, 2023 5:00:58 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 179
+CITY-ID: IDS60904
+
+
+Oct 08, 2023 5:00:58 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:58 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60904
+name: Melbourne
+state: VIC
+time_zone: ECT
+lat: 75.50527838173508
+lon: 114.25906014962862
+local_date_time: null
+local_date_time_full: 2023689141336
+air_temp: 33.11232156009084
+apparent_t: -9.53675212231885
+cloud: Partly cloudy
+dewpt: -4.993505332281769
+press: 968.5050165194993
+rel_hum: 2
+wind_dir: SW
+wind_spd_kmh: 24
+wind_spd_kt: 2
+
+Oct 08, 2023 5:00:59 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 187
+CITY-ID: IDS60909
+
+
+Oct 08, 2023 5:00:59 PM src.GETClient main
+INFO: Server processed request immidiately.
+
+Oct 08, 2023 5:00:59 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60909
+name: Geelong
+state: VIC
+time_zone: AEDT
+lat: 48.91134299043367
+lon: -137.76280384979987
+local_date_time: null
+local_date_time_full: 2023625612416
+air_temp: 35.16989279710072
+apparent_t: -0.4758991719675052
+cloud: Overcast
+dewpt: 2.9832523903753163
+press: 1056.8078148064683
+rel_hum: 35
+wind_dir: NW
+wind_spd_kmh: 28
+wind_spd_kt: 17
+
+Oct 08, 2023 5:01:00 PM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 193
 CITY-ID: IDS60908
 
 
-Oct 08, 2023 2:41:39 PM src.GETClient main
+Oct 08, 2023 5:01:00 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:40 PM src.GETClient main
+
+Oct 08, 2023 5:01:00 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60908
+name: Gold Coast
+state: QLD
+time_zone: EST
+lat: -9.566284107032772
+lon: -67.43488248761159
+local_date_time: null
+local_date_time_full: 2023980232936
+air_temp: 19.47793521120843
+apparent_t: 37.55226151636861
+cloud: Partly cloudy
+dewpt: 6.539283680904909
+press: 955.6783205768912
+rel_hum: 23
+wind_dir: S
+wind_spd_kmh: 4
+wind_spd_kt: 12
+
+Oct 08, 2023 5:01:01 PM src.GETClient main
 INFO: 
 Sending reqeuest to AS.
 GET / HTTP/1.1
 Host: localhost
 Connection: keep-alive
-TIME-STAMP: 159
-CITY-ID: IDS60903
+TIME-STAMP: 199
+CITY-ID: IDS60904
 
 
-Oct 08, 2023 2:41:40 PM src.GETClient main
+Oct 08, 2023 5:01:01 PM src.GETClient main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:41 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 171
-CITY-ID: IDS60905
 
+Oct 08, 2023 5:01:01 PM src.GETClient processRequest
+INFO: Response from server:
+id: IDS60904
+name: Melbourne
+state: VIC
+time_zone: ECT
+lat: 75.50527838173508
+lon: 114.25906014962862
+local_date_time: null
+local_date_time_full: 2023689141336
+air_temp: 33.11232156009084
+apparent_t: -9.53675212231885
+cloud: Partly cloudy
+dewpt: -4.993505332281769
+press: 968.5050165194993
+rel_hum: 2
+wind_dir: SW
+wind_spd_kmh: 24
+wind_spd_kt: 2
 
-Oct 08, 2023 2:41:41 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:42 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 174
-CITY-ID: IDS60903
-
-
-Oct 08, 2023 2:41:42 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:43 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 182
-CITY-ID: IDS60905
-
-
-Oct 08, 2023 2:41:43 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:44 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 192
-CITY-ID: IDS60910
-
-
-Oct 08, 2023 2:41:44 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:45 PM src.GETClient main
-INFO: 
-Sending reqeuest to AS.
-GET / HTTP/1.1
-Host: localhost
-Connection: keep-alive
-TIME-STAMP: 197
-CITY-ID: IDS60907
-
-
-Oct 08, 2023 2:41:45 PM src.GETClient main
-INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:46 PM src.GETClient main
+Oct 08, 2023 5:01:02 PM src.GETClient main
 INFO: Shutting down Client 2

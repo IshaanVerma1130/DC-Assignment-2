@@ -30,7 +30,7 @@ public class Utils {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileDirectory + fileName))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(":");
+                String[] parts = line.split(":", 2);
                 if (parts.length == 2) {
                     String key = parts[0].trim();
                     String value = parts[1].trim();

@@ -1,126 +1,158 @@
-Oct 08, 2023 2:41:34 PM src.CS main
+Oct 08, 2023 5:00:50 PM src.CS main
 INFO: Log File for CS 7
-Oct 08, 2023 2:41:34 PM src.CS main
+
+Oct 08, 2023 5:00:50 PM src.CS main
 INFO: Starting CS 7
-Oct 08, 2023 2:41:34 PM src.CS main
+
+Oct 08, 2023 5:00:50 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 104
 Content-Type: application/json
-Content-Length: 391
+Content-Length: 393
 
-{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"EST","lat":"-14.007062451684675","lon":"-67.18421989298271","local_date_time":null,"local_date_time_full":"2023229517538","air_temp":"18.75231273996523","apparent_t":"24.419794629816337","cloud":"Clear","dewpt":"27.114624623639926","press":"1030.4454179248035","rel_hum":"77","wind_dir":"NE","wind_spd_kmh":"9","wind_spd_kt":"16"}
-Oct 08, 2023 2:41:34 PM src.CS main
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"IST","lat":"-47.42695057117728","lon":"-140.14675067405267","local_date_time":null,"local_date_time_full":"2023956451348","air_temp":"19.430135127333067","apparent_t":"27.188501540275155","cloud":"Overcast","dewpt":"8.482155129539727","press":"989.7359235108249","rel_hum":"73","wind_dir":"SW","wind_spd_kmh":"14","wind_spd_kt":"4"}
+
+Oct 08, 2023 5:00:50 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:35 PM src.CS main
+
+Oct 08, 2023 5:00:51 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 112
 Content-Type: application/json
-Content-Length: 388
+Content-Length: 397
 
-{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"AEDT","lat":"16.139729032591973","lon":"138.45449076807205","local_date_time":null,"local_date_time_full":"20235807112645","air_temp":"30.20311823173106","apparent_t":"8.053844549362875","cloud":"Clear","dewpt":"16.40946980560903","press":"961.2825268111139","rel_hum":"75","wind_dir":"N","wind_spd_kmh":"22","wind_spd_kt":"14"}
-Oct 08, 2023 2:41:35 PM src.CS main
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"CST","lat":"12.87497691691371","lon":"-174.2833693761945","local_date_time":null,"local_date_time_full":"202310271131421","air_temp":"7.148891611056278","apparent_t":"-2.1354767617619252","cloud":"Mostly cloudy","dewpt":"12.185182957906456","press":"981.8463098694488","rel_hum":"66","wind_dir":"E","wind_spd_kmh":"0","wind_spd_kt":"16"}
+
+Oct 08, 2023 5:00:51 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:36 PM src.CS main
+
+Oct 08, 2023 5:00:52 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
-TIME-STAMP: 120
+TIME-STAMP: 127
 Content-Type: application/json
-Content-Length: 394
+Content-Length: 391
 
-{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"IST","lat":"52.95857596345522","lon":"144.44061702705312","local_date_time":null,"local_date_time_full":"20231172410328","air_temp":"-0.5997399322131187","apparent_t":"24.408690831368787","cloud":"Overcast","dewpt":"22.468347437626974","press":"937.464883351973","rel_hum":"80","wind_dir":"E","wind_spd_kmh":"13","wind_spd_kt":"11"}
-Oct 08, 2023 2:41:36 PM src.CS main
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"PST","lat":"-70.83844648762252","lon":"-105.78026745484617","local_date_time":null,"local_date_time_full":"20231214801119","air_temp":"26.231126080581213","apparent_t":"37.93400652477434","cloud":"Clear","dewpt":"0.8008515398961791","press":"971.292920583075","rel_hum":"12","wind_dir":"S","wind_spd_kmh":"28","wind_spd_kt":"13"}
+
+Oct 08, 2023 5:00:52 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:37 PM src.CS main
+
+Oct 08, 2023 5:00:53 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 128
 Content-Type: application/json
-Content-Length: 389
+Content-Length: 396
 
-{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"GMT","lat":"-84.84319528725621","lon":"-69.46712824670232","local_date_time":null,"local_date_time_full":"2023685932932","air_temp":"19.97344051360012","apparent_t":"7.944398817064744","cloud":"Clear","dewpt":"11.448320323216947","press":"960.4267227513479","rel_hum":"12","wind_dir":"SE","wind_spd_kmh":"1","wind_spd_kt":"1"}
-Oct 08, 2023 2:41:37 PM src.CS main
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"ECT","lat":"75.50527838173508","lon":"114.25906014962862","local_date_time":null,"local_date_time_full":"2023689141336","air_temp":"33.11232156009084","apparent_t":"-9.53675212231885","cloud":"Partly cloudy","dewpt":"-4.993505332281769","press":"968.5050165194993","rel_hum":"2","wind_dir":"SW","wind_spd_kmh":"24","wind_spd_kt":"2"}
+
+Oct 08, 2023 5:00:53 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:38 PM src.CS main
+
+Oct 08, 2023 5:00:54 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 136
 Content-Type: application/json
-Content-Length: 394
+Content-Length: 386
 
-{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"AEDT","lat":"-17.15879423403355","lon":"-36.67367807269471","local_date_time":null,"local_date_time_full":"20231038014503","air_temp":"9.244759765144849","apparent_t":"20.36995741804266","cloud":"Partly cloudy","dewpt":"23.042178951803322","press":"1058.8563052425284","rel_hum":"3","wind_dir":"NE","wind_spd_kmh":"1","wind_spd_kt":"7"}
-Oct 08, 2023 2:41:38 PM src.CS main
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"AEDT","lat":"80.98006600396687","lon":"173.7084020686861","local_date_time":null,"local_date_time_full":"20239628192932","air_temp":"-4.104280505086385","apparent_t":"34.78859858386215","cloud":"Overcast","dewpt":"7.120984237775826","press":"1039.8061691895302","rel_hum":"9","wind_dir":"E","wind_spd_kmh":"7","wind_spd_kt":"5"}
+
+Oct 08, 2023 5:00:54 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:39 PM src.CS main
+
+Oct 08, 2023 5:00:55 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 144
 Content-Type: application/json
-Content-Length: 403
+Content-Length: 398
 
-{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"CST","lat":"-34.605948042683906","lon":"-6.997096861765243","local_date_time":null,"local_date_time_full":"20231117135810","air_temp":"30.828611030692144","apparent_t":"26.23926007803086","cloud":"Partly cloudy","dewpt":"-1.5277480042770861","press":"993.7006355015927","rel_hum":"3","wind_dir":"W","wind_spd_kmh":"27","wind_spd_kt":"4"}
-Oct 08, 2023 2:41:39 PM src.CS main
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"GMT","lat":"75.35636664690321","lon":"172.02012048694763","local_date_time":null,"local_date_time_full":"202312283151912","air_temp":"-2.814859392997123","apparent_t":"32.871370971991425","cloud":"Overcast","dewpt":"-7.666810488580911","press":"914.176484947375","rel_hum":"91","wind_dir":"S","wind_spd_kmh":"21","wind_spd_kt":"12"}
+
+Oct 08, 2023 5:00:55 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:40 PM src.CS main
+
+Oct 08, 2023 5:00:56 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 152
 Content-Type: application/json
-Content-Length: 398
+Content-Length: 396
 
-{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"ECT","lat":"22.906440616517727","lon":"-89.50598451353426","local_date_time":null,"local_date_time_full":"202335663384","air_temp":"12.175620440169197","apparent_t":"-5.565203237000674","cloud":"Partly cloudy","dewpt":"22.18817002414834","press":"968.3919509126547","rel_hum":"55","wind_dir":"S","wind_spd_kmh":"12","wind_spd_kt":"10"}
-Oct 08, 2023 2:41:40 PM src.CS main
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"EST","lat":"-60.6695091345361","lon":"-40.0568489404842","local_date_time":null,"local_date_time_full":"20235977101717","air_temp":"22.00544815024692","apparent_t":"34.195048225099264","cloud":"Partly cloudy","dewpt":"25.08031994754939","press":"912.1586385006063","rel_hum":"52","wind_dir":"N","wind_spd_kmh":"1","wind_spd_kt":"11"}
+
+Oct 08, 2023 5:00:56 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:41 PM src.CS main
+
+Oct 08, 2023 5:00:57 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 160
 Content-Type: application/json
-Content-Length: 392
+Content-Length: 397
 
-{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"CST","lat":"-89.2186516507558","lon":"-140.71030355914962","local_date_time":null,"local_date_time_full":"202310907224926","air_temp":"4.98086876111725","apparent_t":"32.94417516001293","cloud":"Clear","dewpt":"-8.58468217552662","press":"1049.4533917807107","rel_hum":"45","wind_dir":"SW","wind_spd_kmh":"2","wind_spd_kt":"10"}
-Oct 08, 2023 2:41:41 PM src.CS main
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"EST","lat":"-9.566284107032772","lon":"-67.43488248761159","local_date_time":null,"local_date_time_full":"2023980232936","air_temp":"19.47793521120843","apparent_t":"37.55226151636861","cloud":"Partly cloudy","dewpt":"6.539283680904909","press":"955.6783205768912","rel_hum":"23","wind_dir":"S","wind_spd_kmh":"4","wind_spd_kt":"12"}
+
+Oct 08, 2023 5:00:57 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:42 PM src.CS main
+
+Oct 08, 2023 5:00:58 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 168
 Content-Type: application/json
 Content-Length: 396
 
-{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"JST","lat":"87.45087916281983","lon":"-14.14433913671624","local_date_time":null,"local_date_time_full":"2023864414290","air_temp":"31.3473130729867","apparent_t":"11.25836955301219","cloud":"Mostly cloudy","dewpt":"-4.135238551953075","press":"1088.7741936551404","rel_hum":"25","wind_dir":"SE","wind_spd_kmh":"29","wind_spd_kt":"15"}
-Oct 08, 2023 2:41:42 PM src.CS main
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"AEDT","lat":"48.91134299043367","lon":"-137.76280384979987","local_date_time":null,"local_date_time_full":"2023625612416","air_temp":"35.16989279710072","apparent_t":"-0.4758991719675052","cloud":"Overcast","dewpt":"2.9832523903753163","press":"1056.8078148064683","rel_hum":"35","wind_dir":"NW","wind_spd_kmh":"28","wind_spd_kt":"17"}
+
+Oct 08, 2023 5:00:58 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:43 PM src.CS main
+
+Oct 08, 2023 5:00:59 PM src.CS main
 INFO: 
-Sending reqeuest to AS.PUT / HTTP/1.1
+Sending reqeuest to AS.
+PUT / HTTP/1.1
 Host: localhost
 Connection: keep-alive
 TIME-STAMP: 176
 Content-Type: application/json
-Content-Length: 388
+Content-Length: 399
 
-{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"PST","lat":"-76.39081783678871","lon":"-51.40410238196873","local_date_time":null,"local_date_time_full":"202387872623","air_temp":"36.3785505883375","apparent_t":"16.956957179809386","cloud":"Clear","dewpt":"14.329503084370437","press":"956.2274977239136","rel_hum":"76","wind_dir":"E","wind_spd_kmh":"21","wind_spd_kt":"19"}
-Oct 08, 2023 2:41:43 PM src.CS main
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"JST","lat":"59.131429886510944","lon":"64.54229753791344","local_date_time":null,"local_date_time_full":"20232629221922","air_temp":"27.102066730442992","apparent_t":"-8.778131710291989","cloud":"Mostly cloudy","dewpt":"24.794700319266234","press":"954.0089808215797","rel_hum":"0","wind_dir":"SW","wind_spd_kmh":"23","wind_spd_kt":"15"}
+
+Oct 08, 2023 5:00:59 PM src.CS main
 INFO: Server processed request immidiately.
-Oct 08, 2023 2:41:44 PM src.CS main
+
+Oct 08, 2023 5:01:00 PM src.CS main
 INFO: CS 7 shutting down.
