@@ -1,7 +1,11 @@
+package src;
+
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
 import java.io.File;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -12,36 +16,29 @@ public class Modifier {
     private static final String DATA_FILE_PATH = "resources/data.json";
     private static final String TEMP_FILE_PATH = "resources/temp_data.json";
 
+    // Method to add a new entry to the data
     public static void putEntry(String req) {
         try {
             File dataFile = new File(DATA_FILE_PATH);
             File tempFile = new File(TEMP_FILE_PATH);
 
-            try {
-                if (tempFile.createNewFile()) {
-                    System.out.println("Temp file created successfully for PUT.");
-                } else {
-                    System.out.println("File already exists.");
-                }
-            } catch (IOException e) {
-                System.err.println("An error occurred while creating the file: " + e.getMessage());
-            }
+            tempFile.createNewFile();
 
+            // Read the existing data from the data file
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
+            // Deserialize the request body and add a timestamp
             WeatherData body = objectMapper.readValue(req, WeatherData.class);
             long currentTimeMillis = System.currentTimeMillis();
             body.setTime_added(currentTimeMillis);
 
+            // Add the new data to the list and write it back to the data file
             Parser.put(weatherDataList, body);
             objectMapper.writeValue(tempFile, weatherDataList);
 
-            if (tempFile.renameTo(dataFile)) {
-                System.out.println("Data updated successfully.");
-            } else {
-                System.err.println("Failed to update data.");
-            }
+            // Rename the temp file to replace the original data file
+            tempFile.renameTo(dataFile);
         } catch (JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonGenerationException e) {
@@ -51,18 +48,26 @@ public class Modifier {
         }
     }
 
+    // Method to retrieve an entry based on the given ID
     public static String getEntry(String id) {
         String response = null;
         try {
+            Response tempObject = new Response();
+            tempObject.setId(id);
+            response = objectMapper.writeValueAsString(tempObject);
 
             File dataFile = new File(DATA_FILE_PATH);
 
+            // Read the existing data from the data file
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
+            // Get the requested data and format the response
             WeatherData result = Parser.get(weatherDataList, id);
-            response = objectMapper.writeValueAsString(Utils.createresponse(result));
 
+            if (result != null) {
+                response = objectMapper.writeValueAsString(Utils.createresponse(result));
+            }
         } catch (JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonGenerationException e) {
@@ -73,21 +78,25 @@ public class Modifier {
         return response;
     }
 
+    // Method to get the current timestamp in a specific format
+    public static String getCurrentTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy h:mm:ss a");
+        Date currentDate = new Date();
+        String formattedDate = sdf.format(currentDate);
+
+        return formattedDate;
+    }
+
+    // Method to remove old data entries based on a time threshold
     public static void removeOldData() {
         try {
+            System.out.println(getCurrentTime());
             File dataFile = new File(DATA_FILE_PATH);
             File tempFile = new File(TEMP_FILE_PATH);
 
-            try {
-                if (tempFile.createNewFile()) {
-                    System.out.println("Temp file created successfully for Deletion.");
-                } else {
-                    System.out.println("File already exists.");
-                }
-            } catch (IOException e) {
-                System.err.println("An error occurred while creating the file: " + e.getMessage());
-            }
+            tempFile.createNewFile();
 
+            // Read the existing data from the data file
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
@@ -108,10 +117,11 @@ public class Modifier {
                 }
             }
 
+            // Write the filtered data to the temp file and replace the original data file
             objectMapper.writeValue(tempFile, newWeatherDataList);
 
             if (tempFile.renameTo(dataFile)) {
-                System.out.println("Data updated successfully.");
+                System.out.println("Periodic deletion complete.\r\n");
             } else {
                 System.err.println("Failed to delete data.");
             }

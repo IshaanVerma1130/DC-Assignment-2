@@ -41,7 +41,7 @@ To build the CS application, follow these steps:
 3. Run the following command to compile the Java source code:
 
    ```shell
-   make compile
+   make
    ```
 
    This will compile the source code and generate the out directory with the compiled classes.
@@ -51,7 +51,7 @@ To build the CS application, follow these steps:
 After building the application, you can run it with the following command:
 
 ```shell
-make run
+make run-cs
 ```
 
 By default, this command runs the CS application with the following arguments:
@@ -62,11 +62,23 @@ By default, this command runs the CS application with the following arguments:
 
 You can modify the default arguments in the makefile (under the ARGS variable) or specify your own arguments when running the application.
 
-### 5. Usage
+### 5. Testing
+
+This runs multiple CS concurrently in different threads.
+
+```shell
+make run-test
+```
+
+By default, this runs 8 Content Servers in different threads. This can be modified from the makefile by changing the `ARG` variable. Other arguments like `PORT` and `SERVER URL` remain the same.
+
+`Note`: Total number of configured threads is `6`. You can change this from the `test/TestCS.java` file.
+
+### 6. Usage
 
 The CS application interacts with a remote server by sending JSON content requests stored in files named CS-{CS ID}.json. These JSON files are located in the resources directory. The CS application reads these files, sends HTTP POST requests to the server, and processes server responses.
 
-### 6. Cleaning up
+### 7. Cleaning up
 
 To clean the compiled files and JAR, run the following command:
 

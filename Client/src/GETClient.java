@@ -1,8 +1,10 @@
+package src;
+
 import java.io.*;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,20 +15,28 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class GETClient {
     static int clientTimestamp = 0;
-    private static final Logger logger = Logger.getLogger(GETClient.class.getName());
 
     public static void main(String[] args) {
+        // Check if the correct number of command-line arguments is provided
         if (args.length != 3) {
             System.out.println("Usage: java GETClient <SERVER URL> <PORT> <CLIENT ID>");
             return;
         }
 
+        Logger logger = null;
         String SERVER_URL = args[0];
         Integer PORT = Integer.parseInt(args[1]);
         Integer CLIENT_ID = Integer.parseInt(args[2]);
 
         try {
-            Handler logHandler = new FileHandler("logs/logFile.log");
+            // Initialize the logger for this client
+            logger = Logger.getLogger(GETClient.class.getName() + "-" + CLIENT_ID);
+
+            String logFilePath = "logs/logFile-" + CLIENT_ID + ".log";
+            File yourFile = new File(logFilePath);
+            yourFile.createNewFile();
+
+            Handler logHandler = new FileHandler(logFilePath);
 
             // Set the desired logging level for the FileHandler
             logHandler.setLevel(Level.INFO);
@@ -40,118 +50,112 @@ public class GETClient {
             // Add the FileHandler to the Logger
             logger.addHandler(logHandler);
 
+            logger.info("Log File for Client " + CLIENT_ID + "\r\n");
+
         } catch (IOException e) {
-            System.out.println("Error creating logger.");
+            System.out.println("Error creating logger. Client " + CLIENT_ID);
             e.printStackTrace();
         }
 
-        // ConsoleHandler consoleHandler = new ConsoleHandler();
-        // consoleHandler.setLevel(Level.INFO);
-        // logger.addHandler(consoleHandler);
-
-        String fileDirectory = "resources/";
-        String fileName = "Client-" + CLIENT_ID + ".txt";
-
-        String input;
         int maxRetries = 3;
         int retryCount = 0;
+        String input;
 
         try {
+            String fileDirectory = "resources/";
+            String fileName = "Client-" + CLIENT_ID + ".txt";
             BufferedReader br = new BufferedReader(new FileReader(fileDirectory + fileName));
+
             while ((input = br.readLine()) != null) {
                 input = input.trim();
-
                 boolean success = false;
+
                 while (!success && retryCount < maxRetries) {
                     Socket socket = new Socket(SERVER_URL, PORT);
                     OutputStream out = socket.getOutputStream();
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
+                    // Generate and send a GET request to the server
                     String requestString = Utils.generateGetRequest(SERVER_URL, clientTimestamp, input);
-
-                    logger.info("Client ID: " + CLIENT_ID +
-                            "    Request: GET    Client Timestamp: " + clientTimestamp + "\r\n" +
-                            "City ID:\r\n" + input + "\r\n");
 
                     out.write(requestString.getBytes());
                     out.flush();
 
+                    logger.info("\r\nSending request to AS.\r\n" + requestString);
+
                     String responseTag = in.readLine();
 
                     if (responseTag.equals("OK")) {
-                        System.out.println("Server processed request.");
-
-                        logger.info("Response Tag: " + responseTag + "    Client ID: " + CLIENT_ID +
-                                "    Request: GET    Client Timestamp: " + clientTimestamp + "\r\n" +
-                                "City ID:\r\n" + input + "\r\n");
-
-                        processRequest(in);
+                        logger.info("Server processed request immediately.\r\n");
+                        processRequest(in, logger);
                         success = true;
 
                     } else if (responseTag.equals("WAIT")) {
-                        System.out.println("Waiting for server response...");
-
-                        logger.info("Waiting for server. Client ID: " + CLIENT_ID + "\r\n" + "City ID:\r\n"
-                                + input + "\r\n");
+                        logger.info("Waiting for server.\r\n");
 
                         String waitResponse = in.readLine();
                         if (waitResponse.equals("PROCESSING")) {
-                            System.out.println("Server processed request.");
-
+                            processRequest(in, logger);
                             logger.info(
-                                    "Response Tag: " + responseTag + "    Client ID: " + CLIENT_ID + "\r\n"
-                                            + "City ID:\r\n"
-                                            + input + "\r\n");
-
-                            processRequest(in);
+                                    "Client updated timestamp after processing request: " + clientTimestamp + "\r\n");
                             success = true;
                         }
                     } else {
-                        System.out.println("Error response received. Retrying...");
-
-                        logger.info("Error processing request.\r\n Client ID: " + CLIENT_ID + "\r\n" + "City ID:\r\n"
-                                + input + "\r\n");
-
+                        logger.severe("Error processing request.");
                         retryCount++;
                     }
 
                     out.close();
                     in.close();
                     socket.close();
+
+                    try {
+                        Thread.sleep(1000); // Sleep for 1000 milliseconds (1 second)
+                    } catch (InterruptedException e) {
+                        // Handle the InterruptedException if needed
+                    }
                 }
 
                 if (!success) {
-                    System.out.println("Maximum retries reached. Unable to process request.");
                     logger.severe("Maximum retries reached.");
                 }
                 retryCount = 0;
             }
             br.close();
+        } catch (ConnectException e) {
+            logger.severe(e.toString());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.severe(e.toString());
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.severe(e.toString());
         }
+        logger.info("Shutting down Client " + CLIENT_ID);
     }
 
     private static void updateClientTimestamp(int serverTimestamp) {
+        // Update the client's timestamp to be greater than or equal to the server's
+        // timestamp
         clientTimestamp = Math.max(clientTimestamp, serverTimestamp) + 1;
     }
 
-    private static void processRequest(BufferedReader in) {
+    private static void processRequest(BufferedReader in, Logger logger) {
         Map<String, String> headers = getHeaders(in);
 
         int contentLength = Integer.parseInt(headers.getOrDefault("Content-Length", "0"));
 
+        // Parse the JSON response and log it
         WeatherData responseObject = getJsonData(in, contentLength);
-        Utils.printResponse(responseObject);
+        String printString = Utils.printResponse(responseObject);
+        System.out.println(printString);
+
+        logger.info("Response from server:\r\n" + printString);
 
         int serverTimestamp = Integer.parseInt(headers.getOrDefault("TIME-STAMP", "0"));
         updateClientTimestamp(serverTimestamp);
-        logger.info("Client Timestamp: " + clientTimestamp + "\r\n");
     }
 
     private static Map<String, String> getHeaders(BufferedReader in) {
+        // Extract and parse HTTP headers from the server's response
         Map<String, String> headers = new HashMap<>();
         String line;
         try {
@@ -167,10 +171,10 @@ public class GETClient {
             e.printStackTrace();
         }
         return null;
-
     }
 
     private static WeatherData getJsonData(BufferedReader in, int contentLength) {
+        // Read and parse JSON data from the server's response
         StringBuilder jsonResponse = new StringBuilder();
         int totalRead = 0;
         try {
@@ -182,8 +186,6 @@ public class GETClient {
                 jsonResponse.append((char) bytesRead);
                 totalRead++;
             }
-
-            logger.info("ResJSON:\r\n" + jsonResponse.toString());
 
             ObjectMapper objectMapper = new ObjectMapper();
             WeatherData responseObject = objectMapper.readValue(jsonResponse.toString(),

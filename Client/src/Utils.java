@@ -1,3 +1,5 @@
+package src;
+
 public class Utils {
     static public String generateGetRequest(String url, Integer timestamp, String cityId) {
         String req = "GET /"
@@ -10,24 +12,24 @@ public class Utils {
         return req;
     }
 
-    static public void printResponse(WeatherData data) {
-        System.out.println("id: " + data.getId());
-        System.out.println("name: " + data.getName());
-        System.out.println("state: " + data.getState());
-        System.out.println("time_zone: " + data.getTime_zone());
-        System.out.println("lat: " + data.getLat());
-        System.out.println("lon: " + data.getLon());
-        System.out.println("local_date_time: " + data.getLocal_date_time());
-        System.out.println("local_date_time_full: " + data.getLocal_date_time_full());
-        System.out.println("air_temp: " + data.getAir_temp());
-        System.out.println("apparent_t: " + data.getApparent_t());
-        System.out.println("cloud: " + data.getCloud());
-        System.out.println("dewpt: " + data.getDewpt());
-        System.out.println("press: " + data.getPress());
-        System.out.println("rel_hum: " + data.getRel_hum());
-        System.out.println("wind_dir: " + data.getWind_dir());
-        System.out.println("wind_spd_kmh: " + data.getWind_spd_kmh());
-        System.out.println("wind_spd_kt: " + data.getWind_spd_kt());
-        System.out.println();
+    static public String printResponse(WeatherData data) {
+        String res = "id: " + data.getId() + "\r\n" +
+                "name: " + data.getName() + "\r\n" +
+                "state: " + data.getState() + "\r\n" +
+                "time_zone: " + data.getTime_zone() + "\r\n" +
+                "lat: " + data.getLat() + "\r\n" +
+                "lon: " + data.getLon() + "\r\n" +
+                "local_date_time: " + data.getLocal_date_time() + "\r\n" +
+                "local_date_time_full: " + data.getLocal_date_time_full() + "\r\n" +
+                "air_temp: " + data.getAir_temp() + "\r\n" +
+                "apparent_t: " + data.getApparent_t() + "\r\n" +
+                "cloud: " + data.getCloud() + "\r\n" +
+                "dewpt: " + data.getDewpt() + "\r\n" +
+                "press: " + data.getPress() + "\r\n" +
+                "rel_hum: " + data.getRel_hum() + "\r\n" +
+                "wind_dir: " + data.getWind_dir() + "\r\n" +
+                "wind_spd_kmh: " + data.getWind_spd_kmh() + "\r\n" +
+                "wind_spd_kt: " + data.getWind_spd_kt() + "\r\n";
+        return res;
     }
 }

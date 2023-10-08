@@ -47,7 +47,7 @@ public class TestDataGenerator {
             }
 
             writer.close();
-            System.out.println("Test data generated successfully.");
+            System.out.println("Test data generated successfully for CS " + CS_ID);
 
         } catch (IOException e) {
             e.printStackTrace();

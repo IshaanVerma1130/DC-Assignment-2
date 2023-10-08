@@ -1,9 +1,11 @@
+package src;
+
 import java.io.*;
+import java.net.ConnectException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -16,16 +18,32 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class CS {
     static int clientTimestamp = 0;
-    private static final Logger logger = Logger.getLogger(CS.class.getName());
 
     public static void main(String[] args) {
+        // Check if the correct number of command-line arguments is provided
         if (args.length != 3) {
             System.out.println("Usage: java CS <SERVER URL> <PORT> <CS ID>");
             return;
         }
 
+        Logger logger = null;
+        String SERVER_URL = args[0];
+        Integer PORT = Integer.parseInt(args[1]);
+        Integer CS_ID = Integer.parseInt(args[2]);
+
         try {
-            Handler logHandler = new FileHandler("logs/logFile.log");
+            // Create a logger for this CS instance
+            logger = Logger.getLogger(CS.class.getName() + "-" + CS_ID);
+
+            // Define the path for the log file
+            String logFilePath = "logs/logFile-" + CS_ID + ".log";
+
+            // Create the log file if it doesn't exist
+            File yourFile = new File(logFilePath);
+            yourFile.createNewFile();
+
+            // Create a FileHandler to handle log entries
+            Handler logHandler = new FileHandler(logFilePath);
 
             // Set the desired logging level for the FileHandler
             logHandler.setLevel(Level.INFO);
@@ -39,32 +57,28 @@ public class CS {
             // Add the FileHandler to the Logger
             logger.addHandler(logHandler);
 
+            // Log initialization information
+            logger.info("Log File for CS " + CS_ID + "\r\n");
+
         } catch (IOException e) {
-            System.out.println("Error creating logger.");
+            System.out.println("Error creating logger. CS " + CS_ID);
             e.printStackTrace();
         }
-
-        ConsoleHandler consoleHandler = new ConsoleHandler();
-        consoleHandler.setLevel(Level.INFO);
-        logger.addHandler(consoleHandler);
-
-        // String SERVER_URL = args[0];
-        // Integer PORT = Integer.parseInt(args[1]);
-        // Integer CS_ID = Integer.parseInt(args[2]);
-
-        String SERVER_URL = "localhost";
-        Integer PORT = 4567;
-        Integer CS_ID = 1;
 
         int maxRetries = 3;
         int retryCount = 0;
 
+        logger.info("Starting CS " + CS_ID + "\r\n");
+
         try {
+            // Generate a list of WeatherData entries
             List<WeatherData> entries = Utils.generateJson(CS_ID);
 
+            // Create an ObjectMapper for JSON processing
             ObjectMapper objectMapper = new ObjectMapper();
             ArrayNode jsonEntries = objectMapper.createArrayNode();
 
+            // Convert WeatherData entries to JSON objects and add them to the array
             for (WeatherData entry : entries) {
                 ObjectNode jsonEntry = objectMapper.valueToTree(entry);
                 jsonEntries.add(jsonEntry);
@@ -75,87 +89,91 @@ public class CS {
                     boolean success = false;
 
                     while (!success && retryCount < maxRetries) {
+                        // Establish a socket connection to the server
                         Socket socket = new Socket(SERVER_URL, PORT);
                         OutputStream out = socket.getOutputStream();
                         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
+                        // Generate a POST request
                         String requestString = Utils.generatePostRequest(SERVER_URL, clientTimestamp,
                                 jsonObject.toString());
 
-                        logger.info("CS ID: " + CS_ID +
-                                "    Request: PUT    CS Timestamp: " + clientTimestamp + "\r\n" +
-                                "ReqJSON:\r\n" + jsonObject.toString() + "\r\n");
-
+                        // Send the request to the server
                         out.write(requestString.getBytes());
                         out.flush();
 
+                        // Log the sent request
+                        logger.info("\r\nSending request to AS.\r\n" + requestString + "\r\n");
+
+                        // Read the server's response tag
                         String responseTag = in.readLine();
 
                         if (responseTag.equals("OK")) {
-                            System.out.println("Server processed request.");
-
-                            logger.info("Response Tag: " + responseTag + "    CS ID: " + CS_ID + "\r\n" + "ReqJSON:\r\n"
-                                    + jsonObject.toString() + "\r\n");
-
+                            logger.info("Server processed request immediately.\r\n");
                             processRequest(in);
                             success = true;
+
                         } else if (responseTag.equals("WAIT")) {
-                            System.out.println("Waiting for server response...");
+                            logger.info("Waiting for server.\r\n");
 
-                            logger.info("Waiting for server. CS ID: " + CS_ID + "\r\n" + "ReqJSON:\r\n"
-                                    + jsonObject.toString() + "\r\n");
-
+                            // Read the "PROCESSING" response
                             String waitResponse = in.readLine();
                             if (waitResponse.equals("PROCESSING")) {
-                                System.out.println("Server processed request.");
-                                logger.info(
-                                        "Response Tag: " + responseTag + "    CS ID: " + CS_ID + "\r\n" + "ReqJSON:\r\n"
-                                                + jsonObject.toString() + "\r\n");
-
                                 processRequest(in);
+                                logger.info(
+                                        "CS updated timestamp after processing request: " + clientTimestamp + "\r\n");
                                 success = true;
                             }
                         } else {
-                            System.out.println("Error response received. Retrying...");
-
-                            logger.info("Error processing request.\r\n CS ID: " + CS_ID + "\r\n" + "ReqJSON:\r\n"
-                                    + jsonObject.toString() + "\r\n");
-
+                            logger.severe("Error processing request.");
                             retryCount++;
                         }
 
+                        // Close socket, input stream, and output stream
                         out.close();
                         in.close();
                         socket.close();
+
+                        try {
+                            // Sleep for 1000 milliseconds (1 second)
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            // Handle the InterruptedException if needed
+                        }
                     }
 
                     if (!success) {
-                        System.out.println("Maximum retries reached. Unable to process request.");
                         logger.severe("Maximum retries reached.");
                     }
                     retryCount = 0;
                 }
             }
+        } catch (ConnectException e) {
+            logger.severe(e.toString());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.severe(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.severe(e.getMessage());
         }
+        // Log shutdown information
+        logger.info("CS " + CS_ID + " shutting down.");
     }
 
     private static void updateClientTimestamp(int serverTimestamp) {
+        // Update the client timestamp based on the server timestamp
         clientTimestamp = Math.max(clientTimestamp, serverTimestamp) + 1;
     }
 
     private static void processRequest(BufferedReader in) {
+        // Extract and process headers from the server's response
         Map<String, String> headers = getHeaders(in);
 
         int serverTimestamp = Integer.parseInt(headers.getOrDefault("TIME-STAMP", "0"));
         updateClientTimestamp(serverTimestamp);
-        logger.info("CS Timestamp: " + clientTimestamp + "\r\n");
     }
 
     private static Map<String, String> getHeaders(BufferedReader in) {
+        // Extract and parse headers from the server's response
         Map<String, String> headers = new HashMap<>();
         String line;
         try {
@@ -171,7 +189,5 @@ public class CS {
             e.printStackTrace();
         }
         return null;
-
     }
-
 }

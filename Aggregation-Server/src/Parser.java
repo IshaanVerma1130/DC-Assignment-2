@@ -1,11 +1,15 @@
+package src;
+
 import java.util.List;
 
 public class Parser {
+    // Method to update or add a new WeatherData entry in the list
     public static void put(List<WeatherData> weatherDataList, WeatherData body) {
         boolean found = false;
         for (WeatherData entry : weatherDataList) {
             if (entry.getId().equals(body.getId())) {
                 found = true;
+                // Update the fields of the existing entry with non-null values from the request
                 if (body.getAir_temp() != null) {
                     entry.setAir_temp(body.getAir_temp());
                 }
@@ -54,21 +58,27 @@ public class Parser {
                 if (body.getWind_spd_kt() != null) {
                     entry.setWind_spd_kt(body.getWind_spd_kt());
                 }
-                break;
+                // This loop ensures that if an entry with the same ID exists, it is updated.
+                break; // Exit the loop after updating the entry
             }
         }
         if (!found) {
+            // If no existing entry with the same ID was found, add the new entry to the
+            // list
             weatherDataList.add(body);
         }
     }
 
+    // Method to retrieve a WeatherData entry based on the provided ID
     public static WeatherData get(List<WeatherData> weatherDataList, String id) {
         for (WeatherData entry : weatherDataList) {
             if (entry.getId().equals(id)) {
+                // Return the entry with the matching ID
                 return entry;
             }
         }
 
+        // If no matching entry is found, return null
         return null;
     }
 }
