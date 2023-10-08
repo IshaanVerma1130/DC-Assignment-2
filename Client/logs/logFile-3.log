@@ -1,2 +1,24 @@
-Oct 08, 2023 1:35:57 AM src.GETClient main
+Oct 08, 2023 6:07:38 AM src.GETClient main
 INFO: Log File for Client 3
+Oct 08, 2023 6:07:38 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 0
+CITY-ID: IDS60901
+
+
+Oct 08, 2023 6:07:38 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:39 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 18
+CITY-ID: IDS60907
+
+

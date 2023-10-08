@@ -1,0 +1,106 @@
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Log File for Aggregation Server
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Server listening on port 4567
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 0
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 1
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 2
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 3
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 4
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 5
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 6
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 7
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 8
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting processing thread No. 9
+Oct 08, 2023 2:31:23 PM src.AggregationServer main
+INFO: Starting periodic deletion thread
+Oct 08, 2023 2:31:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:31:33 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:31:34 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:31:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:31:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:31:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:31:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:31:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:31:40 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:31:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:31:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:31:43 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:31:44 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:31:45 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:46 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:31:46 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:47 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:31:47 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:48 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:31:48 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:49 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:31:49 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:50 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:31:50 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:51 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:31:51 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:31:52 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:31:52 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately

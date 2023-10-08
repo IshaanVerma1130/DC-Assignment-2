@@ -1,2 +1,244 @@
-Oct 08, 2023 1:35:57 AM src.GETClient main
+Oct 08, 2023 6:07:44 AM src.GETClient main
 INFO: Log File for Client 8
+Oct 08, 2023 6:07:44 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 33
+CITY-ID: IDS60906
+
+
+Oct 08, 2023 6:07:44 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:45 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 65
+CITY-ID: IDS60910
+
+
+Oct 08, 2023 6:07:45 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:46 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 74
+CITY-ID: IDS60909
+
+
+Oct 08, 2023 6:07:46 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:47 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 79
+CITY-ID: IDS60908
+
+
+Oct 08, 2023 6:07:47 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:48 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 83
+CITY-ID: IDS60906
+
+
+Oct 08, 2023 6:07:48 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:49 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 87
+CITY-ID: IDS60904
+
+
+Oct 08, 2023 6:07:49 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:50 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 91
+CITY-ID: IDS60909
+
+
+Oct 08, 2023 6:07:50 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:51 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 95
+CITY-ID: IDS60903
+
+
+Oct 08, 2023 6:07:51 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:52 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 99
+CITY-ID: IDS60908
+
+
+Oct 08, 2023 6:07:52 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:53 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 103
+CITY-ID: IDS60903
+
+
+Oct 08, 2023 6:07:53 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:54 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 107
+CITY-ID: IDS60909
+
+
+Oct 08, 2023 6:07:54 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:55 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 111
+CITY-ID: IDS60910
+
+
+Oct 08, 2023 6:07:55 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:56 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 115
+CITY-ID: IDS60904
+
+
+Oct 08, 2023 6:07:56 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:57 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 117
+CITY-ID: IDS60903
+
+
+Oct 08, 2023 6:07:57 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:58 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 119
+CITY-ID: IDS60901
+
+
+Oct 08, 2023 6:07:58 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:07:59 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 121
+CITY-ID: IDS60903
+
+
+Oct 08, 2023 6:07:59 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:08:00 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 123
+CITY-ID: IDS60905
+
+
+Oct 08, 2023 6:08:00 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:08:01 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 125
+CITY-ID: IDS60909
+
+
+Oct 08, 2023 6:08:01 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:08:02 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 127
+CITY-ID: IDS60905
+
+
+Oct 08, 2023 6:08:02 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:08:03 AM src.GETClient main
+INFO: 
+Sending reqeuest to AS.
+GET / HTTP/1.1
+Host: localhost
+Connection: keep-alive
+TIME-STAMP: 129
+CITY-ID: IDS60902
+
+
+Oct 08, 2023 6:08:03 AM src.GETClient main
+INFO: Server processed request immidiately.
+Oct 08, 2023 6:08:04 AM src.GETClient main
+INFO: Shutting down Client 8

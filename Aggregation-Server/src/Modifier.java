@@ -44,8 +44,11 @@ public class Modifier {
     }
 
     public static String getEntry(String id) {
-        String response = "No entry for City ID: " + id;
+        String response = null;
         try {
+            Response tempObject = new Response();
+            tempObject.setId(id);
+            response = objectMapper.writeValueAsString(tempObject);
 
             File dataFile = new File(DATA_FILE_PATH);
 
@@ -53,8 +56,10 @@ public class Modifier {
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
             WeatherData result = Parser.get(weatherDataList, id);
-            response = objectMapper.writeValueAsString(Utils.createresponse(result));
 
+            if (result != null) {
+                response = objectMapper.writeValueAsString(Utils.createresponse(result));
+            }
         } catch (JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonGenerationException e) {
