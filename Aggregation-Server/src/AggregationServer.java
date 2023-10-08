@@ -32,6 +32,7 @@ public class AggregationServer {
         int PORT = 4567;
 
         try {
+            // Initialize the logger for logging server events
             logger = Logger.getLogger(AggregationServer.class.getName());
 
             String logFilePath = "logs/logFile.log";
@@ -70,16 +71,19 @@ public class AggregationServer {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             logger.info("Server listening on port " + PORT);
             for (int i = 0; i < NUM_THREADS; i++) {
+                // Start multiple request processing threads
                 Thread processorThread = new Thread(new RequestProcessor());
                 processorThread.start();
                 logger.info("Starting processing thread No. " + i + "\r\n");
             }
 
+            // Schedule periodic cleanup of old requests
             deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 30, TimeUnit.SECONDS);
             logger.info("Starting periodic deletion thread. Deletion time is set to 30 seconds.\r\n");
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
+                // Submit incoming client requests to the thread pool for processing
                 executor.submit(new ClientHandler(clientSocket));
             }
         } catch (IOException e) {
@@ -93,7 +97,7 @@ public class AggregationServer {
     private static void cleanupOldRequests() {
         lamportLock.lock();
         try {
-            Modifier.removeOldData();
+            Modifier.removeOldData(); // Cleanup old data
         } finally {
             lamportLock.unlock();
         }
@@ -126,6 +130,7 @@ public class AggregationServer {
             try {
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
+                // Read and parse client request
                 String inputLine;
                 StringBuilder request = new StringBuilder();
                 String requestMethod = "";
@@ -189,6 +194,7 @@ public class AggregationServer {
             OutputStream out = clientSocket.getOutputStream();
 
             if (lamportTimestamp >= clientTimestamp) {
+                // Send response to client immediately
                 String response = Modifier.getEntry(id);
                 String jsonResponse = "HTTP/1.1 200 OK\r\n" +
                         "Content-Type: application/json\r\n" +
@@ -199,8 +205,9 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 clientSocket.close();
-                logger.info("Response sent to Client immidiately\r\n");
+                logger.info("Response sent to Client immediately\r\n");
             } else {
+                // Enqueue the request for later processing
                 out.write("WAIT\r\n".getBytes());
                 enqueueRequest("GET", clientTimestamp, id, clientSocket);
             }
@@ -214,6 +221,7 @@ public class AggregationServer {
         try {
             OutputStream out = clientSocket.getOutputStream();
             if (lamportTimestamp >= clientTimestamp) {
+                // Process and respond to the client immediately
                 Modifier.putEntry(jsonRequest);
                 String jsonResponse = "HTTP/1.1 200 OK\r\n" +
                         "TIME-STAMP: " + lamportTimestamp + "\r\n";
@@ -221,8 +229,9 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 clientSocket.close();
-                logger.info("Response sent to CS immidiately\r\n");
+                logger.info("Response sent to CS immediately\r\n");
             } else {
+                // Enqueue the request for later processing
                 out.write("WAIT\r\n".getBytes());
                 enqueueRequest("PUT", clientTimestamp, jsonRequest, clientSocket);
             }
@@ -250,6 +259,7 @@ public class AggregationServer {
                         queueNotEmpty.await();
                     }
                     try {
+                        // Process the enqueued client requests
                         ClientRequest request = requestQueue.take();
 
                         if (request != null) {
@@ -272,6 +282,7 @@ public class AggregationServer {
         private void processGetRequest(ClientRequest request) {
             String id = request.data;
             try {
+                // Send response to client after processing
                 String response = Modifier.getEntry(id);
                 String jsonResponse = "HTTP/1.1 200 OK\r\n" +
                         "Content-Type: application/json\r\n" +
@@ -283,7 +294,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 request.clientSocket.close();
-                logger.info("Response sent to Client after queueing\r\n");
+                logger.info("Response sent to Client after queuing\r\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -292,6 +303,7 @@ public class AggregationServer {
         private void processPutRequest(ClientRequest request) {
             String jsonRequest = request.data;
             try {
+                // Send response to client after processing
                 Modifier.putEntry(jsonRequest);
                 String jsonResponse = "HTTP/1.1 200 OK\r\n" +
                         "TIME-STAMP: " + lamportTimestamp + "\r\n";
@@ -300,7 +312,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 request.clientSocket.close();
-                logger.info("Response sent to CS after queueing\r\n");
+                logger.info("Response sent to CS after queuing\r\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }

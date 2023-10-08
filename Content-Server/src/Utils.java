@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Utils {
+    // Generate a POST request with specific headers and JSON payload
     static public String generatePostRequest(String url, Integer timestamp, String jsonString) {
         String req = "PUT /"
                 + " HTTP/1.1\r\n"
@@ -20,6 +21,7 @@ public class Utils {
         return req;
     }
 
+    // Read and parse WeatherData entries from a file based on CS_ID
     public static List<WeatherData> generateJson(Integer CS_ID) throws IOException {
         String fileDirectory = "resources/";
         String fileName = "CS-" + CS_ID + ".txt";
@@ -55,6 +57,8 @@ public class Utils {
         return entries;
     }
 
+    // Set specific fields of a WeatherData entry based on the provided key-value
+    // pairs
     private static void setField(WeatherData entry, String key, String value) {
         switch (key) {
             case "name":
@@ -110,5 +114,4 @@ public class Utils {
                 break;
         }
     }
-
 }

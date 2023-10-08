@@ -17,6 +17,7 @@ public class GETClient {
     static int clientTimestamp = 0;
 
     public static void main(String[] args) {
+        // Check if the correct number of command-line arguments is provided
         if (args.length != 3) {
             System.out.println("Usage: java GETClient <SERVER URL> <PORT> <CLIENT ID>");
             return;
@@ -28,6 +29,7 @@ public class GETClient {
         Integer CLIENT_ID = Integer.parseInt(args[2]);
 
         try {
+            // Initialize the logger for this client
             logger = Logger.getLogger(GETClient.class.getName() + "-" + CLIENT_ID);
 
             String logFilePath = "logs/logFile-" + CLIENT_ID + ".log";
@@ -73,17 +75,18 @@ public class GETClient {
                     OutputStream out = socket.getOutputStream();
                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
+                    // Generate and send a GET request to the server
                     String requestString = Utils.generateGetRequest(SERVER_URL, clientTimestamp, input);
 
                     out.write(requestString.getBytes());
                     out.flush();
 
-                    logger.info("\r\nSending reqeuest to AS.\r\n" + requestString);
+                    logger.info("\r\nSending request to AS.\r\n" + requestString);
 
                     String responseTag = in.readLine();
 
                     if (responseTag.equals("OK")) {
-                        logger.info("Server processed request immidiately.\r\n");
+                        logger.info("Server processed request immediately.\r\n");
                         processRequest(in, logger);
                         success = true;
 
@@ -130,6 +133,8 @@ public class GETClient {
     }
 
     private static void updateClientTimestamp(int serverTimestamp) {
+        // Update the client's timestamp to be greater than or equal to the server's
+        // timestamp
         clientTimestamp = Math.max(clientTimestamp, serverTimestamp) + 1;
     }
 
@@ -138,6 +143,7 @@ public class GETClient {
 
         int contentLength = Integer.parseInt(headers.getOrDefault("Content-Length", "0"));
 
+        // Parse the JSON response and log it
         WeatherData responseObject = getJsonData(in, contentLength);
         String printString = Utils.printResponse(responseObject);
         System.out.println(printString);
@@ -149,6 +155,7 @@ public class GETClient {
     }
 
     private static Map<String, String> getHeaders(BufferedReader in) {
+        // Extract and parse HTTP headers from the server's response
         Map<String, String> headers = new HashMap<>();
         String line;
         try {
@@ -164,10 +171,10 @@ public class GETClient {
             e.printStackTrace();
         }
         return null;
-
     }
 
     private static WeatherData getJsonData(BufferedReader in, int contentLength) {
+        // Read and parse JSON data from the server's response
         StringBuilder jsonResponse = new StringBuilder();
         int totalRead = 0;
         try {

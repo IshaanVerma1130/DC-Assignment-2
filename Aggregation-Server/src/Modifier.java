@@ -16,6 +16,7 @@ public class Modifier {
     private static final String DATA_FILE_PATH = "resources/data.json";
     private static final String TEMP_FILE_PATH = "resources/temp_data.json";
 
+    // Method to add a new entry to the data
     public static void putEntry(String req) {
         try {
             File dataFile = new File(DATA_FILE_PATH);
@@ -23,20 +24,22 @@ public class Modifier {
 
             tempFile.createNewFile();
 
+            // Read the existing data from the data file
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
+            // Deserialize the request body and add a timestamp
             WeatherData body = objectMapper.readValue(req, WeatherData.class);
             long currentTimeMillis = System.currentTimeMillis();
             body.setTime_added(currentTimeMillis);
 
+            // Add the new data to the list and write it back to the data file
             Parser.put(weatherDataList, body);
             objectMapper.writeValue(tempFile, weatherDataList);
 
+            // Rename the temp file to replace the original data file
             tempFile.renameTo(dataFile);
-        } catch (
-
-        JsonMappingException e) {
+        } catch (JsonMappingException e) {
             e.printStackTrace();
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -45,6 +48,7 @@ public class Modifier {
         }
     }
 
+    // Method to retrieve an entry based on the given ID
     public static String getEntry(String id) {
         String response = null;
         try {
@@ -54,9 +58,11 @@ public class Modifier {
 
             File dataFile = new File(DATA_FILE_PATH);
 
+            // Read the existing data from the data file
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
+            // Get the requested data and format the response
             WeatherData result = Parser.get(weatherDataList, id);
 
             if (result != null) {
@@ -72,6 +78,7 @@ public class Modifier {
         return response;
     }
 
+    // Method to get the current timestamp in a specific format
     public static String getCurrentTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy h:mm:ss a");
         Date currentDate = new Date();
@@ -80,6 +87,7 @@ public class Modifier {
         return formattedDate;
     }
 
+    // Method to remove old data entries based on a time threshold
     public static void removeOldData() {
         try {
             System.out.println(getCurrentTime());
@@ -88,6 +96,7 @@ public class Modifier {
 
             tempFile.createNewFile();
 
+            // Read the existing data from the data file
             List<WeatherData> weatherDataList = objectMapper.readValue(dataFile,
                     objectMapper.getTypeFactory().constructCollectionType(List.class, WeatherData.class));
 
@@ -108,6 +117,7 @@ public class Modifier {
                 }
             }
 
+            // Write the filtered data to the temp file and replace the original data file
             objectMapper.writeValue(tempFile, newWeatherDataList);
 
             if (tempFile.renameTo(dataFile)) {
