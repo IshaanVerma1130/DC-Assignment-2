@@ -25,14 +25,14 @@ all: compile
 # Compile the Java source files to classes
 compile: $(SOURCES)
 	@mkdir -p $(OUT_DIR)
-	$(JAVAC) -cp $(CLASSPATH) -d $(OUT_DIR) $^
+	@$(JAVAC) -cp $(CLASSPATH) -d $(OUT_DIR) $^
 
 # Run the Java program
-run: compile
+run-as: compile
 	java -cp $(CLASSPATH):$(OUT_DIR) $(SRC_DIR)/$(MAIN_CLASS)
 
 # Clean the compiled files and JAR
 clean:
-	rm -rf $(OUT_DIR)
+	@rm -rf $(OUT_DIR)
 
 .PHONY: all compile run clean
