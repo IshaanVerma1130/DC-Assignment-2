@@ -47,7 +47,7 @@ clean_content_server:
 
 # Run Aggregation Server
 run-as:
-	@gnome-terminal -- bash -c "make run -C Aggregation-Server"
+	@gnome-terminal -- bash -c "make run-as -C Aggregation-Server"
 
 # Run client and content server tests after 5 seconds
 run-test:

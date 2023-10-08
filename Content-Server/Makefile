@@ -33,7 +33,7 @@ all: compile
 # Compile the Java source files to classes
 compile: $(SOURCES)
 	@mkdir -p $(OUT_DIR)
-	$(JAVAC) -cp $(CLASSPATH) -d $(OUT_DIR) $^
+	@$(JAVAC) -cp $(CLASSPATH) -d $(OUT_DIR) $^
 
 # Compile and run the Java program with arguments
 run-cs: compile
@@ -45,6 +45,6 @@ run-test:
 
 # Clean the compiled files and JAR
 clean:
-	rm -rf $(OUT_DIR)
+	@rm -rf $(OUT_DIR)
 
 .PHONY: all compile run clean

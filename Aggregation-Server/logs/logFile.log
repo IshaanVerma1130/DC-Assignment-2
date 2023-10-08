@@ -1,106 +1,1066 @@
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Log File for Aggregation Server
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Server listening on port 4567
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 0
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 1
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 2
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 3
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 4
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 5
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 6
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 7
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 8
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting processing thread No. 9
-Oct 08, 2023 2:31:23 PM src.AggregationServer main
+Oct 08, 2023 2:41:19 PM src.AggregationServer main
 INFO: Starting periodic deletion thread
-Oct 08, 2023 2:31:33 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60901
-Oct 08, 2023 2:31:33 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:34 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:24 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"GMT","lat":"-10.393379563725318","lon":"-13.646417790095342","local_date_time":null,"local_date_time_full":"20231272511432","air_temp":"29.970823544216586","apparent_t":"22.397594185602138","cloud":"Clear","dewpt":"8.55941643814672","press":"1007.3332249525912","rel_hum":"96","wind_dir":"S","wind_spd_kmh":"14","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:24 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:24 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"PST","lat":"7.857035433319751","lon":"-163.27041664712894","local_date_time":null,"local_date_time_full":"20232533212139","air_temp":"38.40390709514538","apparent_t":"9.454206155191322","cloud":"Clear","dewpt":"11.000913396229773","press":"933.7310992324992","rel_hum":"65","wind_dir":"W","wind_spd_kmh":"29","wind_spd_kt":"9"}
+Oct 08, 2023 2:41:24 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:24 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"AEDT","lat":"-4.873329983987361","lon":"-9.897010779675469","local_date_time":null,"local_date_time_full":"20231142972214","air_temp":"11.325876402959704","apparent_t":"30.6533567320064","cloud":"Mostly cloudy","dewpt":"6.678678080159713","press":"977.9789245805765","rel_hum":"32","wind_dir":"NE","wind_spd_kmh":"29","wind_spd_kt":"17"}
+Oct 08, 2023 2:41:24 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:24 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"PST","lat":"49.12852143681846","lon":"78.19200888638414","local_date_time":null,"local_date_time_full":"202396909484","air_temp":"13.309586199096117","apparent_t":"2.190088129175896","cloud":"Partly cloudy","dewpt":"26.716877259853803","press":"988.4225554376887","rel_hum":"88","wind_dir":"S","wind_spd_kmh":"25","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:24 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:24 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"IST","lat":"70.97722004341986","lon":"-2.072966551203507","local_date_time":null,"local_date_time_full":"20236517222124","air_temp":"8.436621072574312","apparent_t":"24.71763512504259","cloud":"Overcast","dewpt":"19.16257856573197","press":"1014.7674541274359","rel_hum":"29","wind_dir":"NE","wind_spd_kmh":"6","wind_spd_kt":"18"}
+Oct 08, 2023 2:41:24 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:24 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"JST","lat":"-0.346429685596334","lon":"-39.24870990215416","local_date_time":null,"local_date_time_full":"2023561945321","air_temp":"31.97571054343696","apparent_t":"-1.300496750765264","cloud":"Partly cloudy","dewpt":"17.204922589183443","press":"1007.4908827107906","rel_hum":"42","wind_dir":"NW","wind_spd_kmh":"13","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:24 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:25 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"IST","lat":"62.44672070392991","lon":"66.6093882798472","local_date_time":null,"local_date_time_full":"2023961583841","air_temp":"37.334007296266705","apparent_t":"-8.990718333187866","cloud":"Clear","dewpt":"6.7994458064687","press":"900.6186352757162","rel_hum":"30","wind_dir":"S","wind_spd_kmh":"13","wind_spd_kt":"18"}
+Oct 08, 2023 2:41:25 PM src.AggregationServer$RequestProcessor processPutRequest
+INFO: Response sent to CS after queueing
+Oct 08, 2023 2:41:25 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"AEDT","lat":"-39.05835109020373","lon":"-147.18480451333016","local_date_time":null,"local_date_time_full":"20231270822128","air_temp":"-9.36830000510613","apparent_t":"3.3513112399642413","cloud":"Partly cloudy","dewpt":"29.317603008139358","press":"1070.451281292259","rel_hum":"65","wind_dir":"W","wind_spd_kmh":"5","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:25 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:25 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"EST","lat":"15.689333568731797","lon":"81.04534041404122","local_date_time":null,"local_date_time_full":"2023371251753","air_temp":"5.90406376118016","apparent_t":"18.462477705366535","cloud":"Clear","dewpt":"25.51252975075684","press":"1061.271559830408","rel_hum":"33","wind_dir":"SE","wind_spd_kmh":"6","wind_spd_kt":"17"}
+Oct 08, 2023 2:41:25 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:25 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"EST","lat":"-64.41813459375713","lon":"44.472127967371705","local_date_time":null,"local_date_time_full":"202312848153234","air_temp":"8.439305000305101","apparent_t":"6.328728543346461","cloud":"Overcast","dewpt":"26.84876323435394","press":"1040.8501888699489","rel_hum":"63","wind_dir":"NW","wind_spd_kmh":"4","wind_spd_kt":"14"}
+Oct 08, 2023 2:41:25 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:25 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"AEDT","lat":"47.81304462737546","lon":"-129.12481038977216","local_date_time":null,"local_date_time_full":"2023127641504","air_temp":"13.320682670861341","apparent_t":"33.416850848445634","cloud":"Mostly cloudy","dewpt":"18.07452720895357","press":"1006.4760326627169","rel_hum":"54","wind_dir":"S","wind_spd_kmh":"20","wind_spd_kt":"6"}
+Oct 08, 2023 2:41:25 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:25 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"IST","lat":"-5.43815066791656","lon":"38.97158518686601","local_date_time":null,"local_date_time_full":"2023854115639","air_temp":"13.781549637613804","apparent_t":"-5.1966446489397375","cloud":"Clear","dewpt":"-2.4695255265247074","press":"1097.0917634575067","rel_hum":"82","wind_dir":"SE","wind_spd_kmh":"10","wind_spd_kt":"10"}
+Oct 08, 2023 2:41:25 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60902
-Oct 08, 2023 2:31:34 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:26 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:35 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60910
-Oct 08, 2023 2:31:35 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:36 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60905
-Oct 08, 2023 2:31:36 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:37 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60906
-Oct 08, 2023 2:31:37 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:38 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60903
-Oct 08, 2023 2:31:38 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:39 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60907
-Oct 08, 2023 2:31:39 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:26 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:40 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60903
-Oct 08, 2023 2:31:40 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:41 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60906
-Oct 08, 2023 2:31:41 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:42 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60903
-Oct 08, 2023 2:31:42 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:43 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60904
-Oct 08, 2023 2:31:43 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:26 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:44 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60910
-Oct 08, 2023 2:31:44 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:26 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:45 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:26 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60902
-Oct 08, 2023 2:31:45 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:26 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:46 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60910
-Oct 08, 2023 2:31:46 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"CST","lat":"-46.34721365810368","lon":"-3.694941703269592","local_date_time":null,"local_date_time_full":"20238544133548","air_temp":"28.65128004537783","apparent_t":"-5.04802675222292","cloud":"Mostly cloudy","dewpt":"12.155063716324005","press":"923.1796859319836","rel_hum":"17","wind_dir":"SE","wind_spd_kmh":"13","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:26 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"CST","lat":"54.269920936680336","lon":"-108.16372051187653","local_date_time":null,"local_date_time_full":"20231074894431","air_temp":"29.425854388298973","apparent_t":"6.769451358926464","cloud":"Clear","dewpt":"-1.9904614098661089","press":"971.9047730033928","rel_hum":"99","wind_dir":"NW","wind_spd_kmh":"3","wind_spd_kt":"4"}
+Oct 08, 2023 2:41:26 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"EST","lat":"65.6127016228478","lon":"-14.357173157901428","local_date_time":null,"local_date_time_full":"20231065917581","air_temp":"30.547203310441517","apparent_t":"9.011109285906002","cloud":"Overcast","dewpt":"20.94642389416599","press":"959.3633272910907","rel_hum":"95","wind_dir":"SW","wind_spd_kmh":"30","wind_spd_kt":"15"}
+Oct 08, 2023 2:41:26 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"PST","lat":"-84.76374757053512","lon":"-37.004110709627156","local_date_time":null,"local_date_time_full":"202325225131","air_temp":"13.064998296297723","apparent_t":"7.131923429206076","cloud":"Overcast","dewpt":"13.266746553909023","press":"1098.8889285193577","rel_hum":"40","wind_dir":"NW","wind_spd_kmh":"12","wind_spd_kt":"3"}
+Oct 08, 2023 2:41:26 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"IST","lat":"-24.377040800512432","lon":"147.27244907943344","local_date_time":null,"local_date_time_full":"20231173817417","air_temp":"13.911989520796773","apparent_t":"37.04877257716974","cloud":"Mostly cloudy","dewpt":"12.467673617785703","press":"939.6952037551874","rel_hum":"79","wind_dir":"E","wind_spd_kmh":"8","wind_spd_kt":"12"}
+Oct 08, 2023 2:41:26 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:26 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"PST","lat":"2.113571356818568","lon":"-0.15709469279798327","local_date_time":null,"local_date_time_full":"20239727204741","air_temp":"-3.176017627928543","apparent_t":"-2.2458663419448657","cloud":"Partly cloudy","dewpt":"-7.443253024911907","press":"906.0671319912685","rel_hum":"100","wind_dir":"NE","wind_spd_kmh":"3","wind_spd_kt":"0"}
+Oct 08, 2023 2:41:26 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"IST","lat":"28.524986997907646","lon":"-29.947507988065553","local_date_time":null,"local_date_time_full":"20231213172436","air_temp":"39.33993356132641","apparent_t":"2.775100545916896","cloud":"Mostly cloudy","dewpt":"17.414208337698255","press":"971.0549533518101","rel_hum":"61","wind_dir":"NW","wind_spd_kmh":"26","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:27 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"ECT","lat":"12.549567160279025","lon":"-53.69517697068672","local_date_time":null,"local_date_time_full":"20238369103026","air_temp":"-1.5564759978562908","apparent_t":"-2.805530396423391","cloud":"Overcast","dewpt":"-6.356016535692963","press":"1096.209737291746","rel_hum":"41","wind_dir":"S","wind_spd_kmh":"25","wind_spd_kt":"14"}
+Oct 08, 2023 2:41:27 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"IST","lat":"25.602503049596336","lon":"136.05501381438398","local_date_time":null,"local_date_time_full":"2023694703019","air_temp":"17.678164984707593","apparent_t":"31.094026645044295","cloud":"Mostly cloudy","dewpt":"10.566650268789765","press":"1072.851481350911","rel_hum":"18","wind_dir":"SW","wind_spd_kmh":"20","wind_spd_kt":"12"}
+Oct 08, 2023 2:41:27 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"GMT","lat":"19.012356039095224","lon":"21.9517285905481","local_date_time":null,"local_date_time_full":"20232893215144","air_temp":"-7.499681265220673","apparent_t":"-6.225567399633716","cloud":"Partly cloudy","dewpt":"-4.286889104320566","press":"1000.2036088787318","rel_hum":"84","wind_dir":"SW","wind_spd_kmh":"20","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:27 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"IST","lat":"-77.01704918949127","lon":"-133.58090732593172","local_date_time":null,"local_date_time_full":"2023382312278","air_temp":"28.584476642808767","apparent_t":"19.509116692250103","cloud":"Mostly cloudy","dewpt":"19.163175694315292","press":"1006.4439504419049","rel_hum":"34","wind_dir":"SE","wind_spd_kmh":"0","wind_spd_kt":"10"}
+Oct 08, 2023 2:41:27 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"GMT","lat":"-0.9340308458144051","lon":"149.71482496541927","local_date_time":null,"local_date_time_full":"2023372155514","air_temp":"24.391742462895806","apparent_t":"-9.650462384703154","cloud":"Clear","dewpt":"16.091827911815344","press":"988.9129036334625","rel_hum":"36","wind_dir":"S","wind_spd_kmh":"12","wind_spd_kt":"5"}
+Oct 08, 2023 2:41:27 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:27 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:47 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60905
-Oct 08, 2023 2:31:47 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:48 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60908
-Oct 08, 2023 2:31:48 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:27 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:49 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60906
-Oct 08, 2023 2:31:49 PM src.AggregationServer handleGetRequest
-INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:50 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60901
-Oct 08, 2023 2:31:50 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:27 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:51 PM src.AggregationServer$ClientHandler run
-INFO: New Client Connection. Requested City: IDS60907
-Oct 08, 2023 2:31:51 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:27 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
-Oct 08, 2023 2:31:52 PM src.AggregationServer$ClientHandler run
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:27 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:27 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:27 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"IST","lat":"52.73527075642744","lon":"-153.13775075647246","local_date_time":null,"local_date_time_full":"2023261303037","air_temp":"-8.548974728158656","apparent_t":"-9.603226695575863","cloud":"Mostly cloudy","dewpt":"-0.40555482248958086","press":"979.7233840162955","rel_hum":"55","wind_dir":"S","wind_spd_kmh":"1","wind_spd_kt":"16"}
+Oct 08, 2023 2:41:28 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"JST","lat":"21.373240151748234","lon":"-16.77857201435816","local_date_time":null,"local_date_time_full":"2023813220538","air_temp":"7.102691830383559","apparent_t":"6.616853893333385","cloud":"Overcast","dewpt":"28.585880064618536","press":"978.1787017302859","rel_hum":"21","wind_dir":"E","wind_spd_kmh":"8","wind_spd_kt":"2"}
+Oct 08, 2023 2:41:28 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"ECT","lat":"42.47659032781749","lon":"-40.191872693374705","local_date_time":null,"local_date_time_full":"2023483012521","air_temp":"-4.083903052356444","apparent_t":"1.1021871601678086","cloud":"Partly cloudy","dewpt":"1.1238776555918495","press":"931.3192829465265","rel_hum":"48","wind_dir":"N","wind_spd_kmh":"20","wind_spd_kt":"17"}
+Oct 08, 2023 2:41:28 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"PST","lat":"-69.30872513109802","lon":"142.16146662470214","local_date_time":null,"local_date_time_full":"2023328183532","air_temp":"7.525747686016306","apparent_t":"33.809955804340525","cloud":"Clear","dewpt":"-8.675896157247834","press":"908.3345198048169","rel_hum":"5","wind_dir":"W","wind_spd_kmh":"6","wind_spd_kt":"4"}
+Oct 08, 2023 2:41:28 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"GMT","lat":"-77.85678644564538","lon":"-89.92632099874302","local_date_time":null,"local_date_time_full":"202397200391","air_temp":"17.947606984636348","apparent_t":"24.623783055898286","cloud":"Clear","dewpt":"25.219205533623693","press":"1083.050997414699","rel_hum":"36","wind_dir":"E","wind_spd_kmh":"18","wind_spd_kt":"0"}
+Oct 08, 2023 2:41:28 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"CST","lat":"-44.16170052218776","lon":"141.26323950064983","local_date_time":null,"local_date_time_full":"202384256425","air_temp":"36.35555741346884","apparent_t":"8.426015579101545","cloud":"Mostly cloudy","dewpt":"5.481358029834151","press":"901.6507405356746","rel_hum":"7","wind_dir":"S","wind_spd_kmh":"6","wind_spd_kt":"8"}
+Oct 08, 2023 2:41:28 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:28 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:28 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:28 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
 INFO: New Client Connection. Requested City: IDS60906
-Oct 08, 2023 2:31:52 PM src.AggregationServer handleGetRequest
+Oct 08, 2023 2:41:28 PM src.AggregationServer handleGetRequest
 INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:28 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:28 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:28 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"JST","lat":"66.15796304673424","lon":"32.03990867329043","local_date_time":null,"local_date_time_full":"2023147123254","air_temp":"17.663109209191767","apparent_t":"20.41306260367027","cloud":"Overcast","dewpt":"28.423801473488936","press":"922.6903999720366","rel_hum":"6","wind_dir":"W","wind_spd_kmh":"26","wind_spd_kt":"14"}
+Oct 08, 2023 2:41:29 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"EST","lat":"-4.9529651200979","lon":"48.83330502424016","local_date_time":null,"local_date_time_full":"20238351154716","air_temp":"25.869262493886403","apparent_t":"7.803157292035536","cloud":"Overcast","dewpt":"-5.7910059550218","press":"911.4884750131775","rel_hum":"100","wind_dir":"N","wind_spd_kmh":"23","wind_spd_kt":"4"}
+Oct 08, 2023 2:41:29 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"EST","lat":"43.334945942848236","lon":"-165.45957231737415","local_date_time":null,"local_date_time_full":"20239353175826","air_temp":"33.35628335253233","apparent_t":"22.268674192386406","cloud":"Partly cloudy","dewpt":"-0.3077093352035156","press":"1066.4159337624174","rel_hum":"39","wind_dir":"SW","wind_spd_kmh":"3","wind_spd_kt":"2"}
+Oct 08, 2023 2:41:29 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"GMT","lat":"46.0778494849105","lon":"-118.74408524861747","local_date_time":null,"local_date_time_full":"202341672033","air_temp":"35.670347260609205","apparent_t":"-5.107344908497227","cloud":"Mostly cloudy","dewpt":"28.756200974068932","press":"1070.021675584639","rel_hum":"28","wind_dir":"SW","wind_spd_kmh":"6","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:29 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"PST","lat":"78.26895857774073","lon":"127.22538854976005","local_date_time":null,"local_date_time_full":"2023221284334","air_temp":"31.17977051247079","apparent_t":"22.532003219215973","cloud":"Mostly cloudy","dewpt":"-4.171159380000673","press":"969.5961380238621","rel_hum":"100","wind_dir":"W","wind_spd_kmh":"4","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:29 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"EST","lat":"58.817039873596826","lon":"157.7100553275858","local_date_time":null,"local_date_time_full":"2023122220456","air_temp":"15.54543914911438","apparent_t":"33.19782621604781","cloud":"Mostly cloudy","dewpt":"-9.176046372714243","press":"1084.901332725378","rel_hum":"94","wind_dir":"S","wind_spd_kmh":"3","wind_spd_kt":"12"}
+Oct 08, 2023 2:41:29 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:29 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:29 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:29 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:29 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:29 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:29 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:29 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"GMT","lat":"26.157690743257447","lon":"72.03916854652189","local_date_time":null,"local_date_time_full":"2023376823614","air_temp":"31.709944872860092","apparent_t":"17.033287931788912","cloud":"Mostly cloudy","dewpt":"4.7680961077022985","press":"1001.3028566078684","rel_hum":"24","wind_dir":"N","wind_spd_kmh":"23","wind_spd_kt":"9"}
+Oct 08, 2023 2:41:30 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"EST","lat":"32.80342542515136","lon":"24.201046582529784","local_date_time":null,"local_date_time_full":"20235496224830","air_temp":"-2.1163513070271165","apparent_t":"15.589427240441374","cloud":"Mostly cloudy","dewpt":"-7.125961284237996","press":"936.4043768098293","rel_hum":"30","wind_dir":"NW","wind_spd_kmh":"15","wind_spd_kt":"9"}
+Oct 08, 2023 2:41:30 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"PST","lat":"48.51004613611258","lon":"76.14221276010562","local_date_time":null,"local_date_time_full":"2023928433314","air_temp":"17.746921679806213","apparent_t":"7.868499685227686","cloud":"Mostly cloudy","dewpt":"6.126774430727394","press":"962.1359309195375","rel_hum":"70","wind_dir":"SW","wind_spd_kmh":"7","wind_spd_kt":"9"}
+Oct 08, 2023 2:41:30 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"JST","lat":"16.931099535737886","lon":"159.44917041705628","local_date_time":null,"local_date_time_full":"20234988194935","air_temp":"33.29501801733818","apparent_t":"30.55931824058625","cloud":"Partly cloudy","dewpt":"2.063580918192244","press":"999.192122268058","rel_hum":"88","wind_dir":"N","wind_spd_kmh":"13","wind_spd_kt":"4"}
+Oct 08, 2023 2:41:30 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"JST","lat":"-41.01304449574732","lon":"13.851456870416484","local_date_time":null,"local_date_time_full":"2023418532831","air_temp":"0.7394990987762498","apparent_t":"3.319272953856437","cloud":"Mostly cloudy","dewpt":"16.552703380304617","press":"1024.7868197987136","rel_hum":"36","wind_dir":"NE","wind_spd_kmh":"30","wind_spd_kt":"17"}
+Oct 08, 2023 2:41:30 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"JST","lat":"44.30570000722875","lon":"63.649758854951585","local_date_time":null,"local_date_time_full":"20231081763137","air_temp":"27.81787969267515","apparent_t":"25.861108636389552","cloud":"Partly cloudy","dewpt":"5.210865709023992","press":"997.3805682939316","rel_hum":"80","wind_dir":"SE","wind_spd_kmh":"10","wind_spd_kt":"15"}
+Oct 08, 2023 2:41:30 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:30 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:30 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:30 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:30 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:30 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:30 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:30 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"EST","lat":"5.6603586307946046","lon":"-163.32732707257662","local_date_time":null,"local_date_time_full":"20234102102045","air_temp":"37.12840024114121","apparent_t":"6.398663704214588","cloud":"Partly cloudy","dewpt":"22.34127687033046","press":"1066.4865204342223","rel_hum":"65","wind_dir":"SE","wind_spd_kmh":"23","wind_spd_kt":"1"}
+Oct 08, 2023 2:41:31 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"IST","lat":"-8.974851171116185","lon":"-41.78530631806453","local_date_time":null,"local_date_time_full":"20233199122417","air_temp":"13.556005352041549","apparent_t":"34.21973176258874","cloud":"Partly cloudy","dewpt":"19.028330199019216","press":"936.3128073000225","rel_hum":"10","wind_dir":"SE","wind_spd_kmh":"15","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:31 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"IST","lat":"-65.26836205903999","lon":"-108.57053559717157","local_date_time":null,"local_date_time_full":"2023103788036","air_temp":"36.17997483454148","apparent_t":"4.834242354380834","cloud":"Mostly cloudy","dewpt":"15.327972361589232","press":"919.8565399481661","rel_hum":"82","wind_dir":"N","wind_spd_kmh":"6","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:31 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"PST","lat":"75.73019905359817","lon":"4.21695867184971","local_date_time":null,"local_date_time_full":"202313139216","air_temp":"27.66833296498462","apparent_t":"24.118288989118398","cloud":"Partly cloudy","dewpt":"21.47097824996613","press":"917.1411538431215","rel_hum":"58","wind_dir":"N","wind_spd_kmh":"25","wind_spd_kt":"15"}
+Oct 08, 2023 2:41:31 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"GMT","lat":"-34.280825807957534","lon":"104.06669473345636","local_date_time":null,"local_date_time_full":"2023118155527","air_temp":"21.606385680533766","apparent_t":"33.372082213849346","cloud":"Partly cloudy","dewpt":"27.96695315070589","press":"976.507370454761","rel_hum":"97","wind_dir":"NW","wind_spd_kmh":"20","wind_spd_kt":"0"}
+Oct 08, 2023 2:41:31 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"CST","lat":"-27.99375750720106","lon":"-166.83094156447055","local_date_time":null,"local_date_time_full":"2023392731623","air_temp":"15.198734441901443","apparent_t":"17.81654537230128","cloud":"Mostly cloudy","dewpt":"22.741397603627703","press":"920.3482431967769","rel_hum":"96","wind_dir":"E","wind_spd_kmh":"3","wind_spd_kt":"2"}
+Oct 08, 2023 2:41:31 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:31 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:31 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:31 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:31 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:31 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:31 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:31 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"PST","lat":"6.174678463643744","lon":"49.20096412890382","local_date_time":null,"local_date_time_full":"202312149104610","air_temp":"-0.9771365863555896","apparent_t":"4.72301692727887","cloud":"Partly cloudy","dewpt":"24.546879672720536","press":"995.480766832647","rel_hum":"80","wind_dir":"S","wind_spd_kmh":"22","wind_spd_kt":"12"}
+Oct 08, 2023 2:41:32 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"ECT","lat":"-77.19821757105971","lon":"-34.86772795765316","local_date_time":null,"local_date_time_full":"20235798134033","air_temp":"30.53872661924258","apparent_t":"7.36307519133884","cloud":"Clear","dewpt":"22.16273318521958","press":"1049.6384037973712","rel_hum":"90","wind_dir":"NE","wind_spd_kmh":"4","wind_spd_kt":"2"}
+Oct 08, 2023 2:41:32 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"JST","lat":"82.85951745351923","lon":"69.02327025545051","local_date_time":null,"local_date_time_full":"2023613818316","air_temp":"38.51408754348856","apparent_t":"27.01149311607793","cloud":"Partly cloudy","dewpt":"-2.30603268980047","press":"973.3138771369768","rel_hum":"91","wind_dir":"NE","wind_spd_kmh":"3","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:32 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"ECT","lat":"60.36724719235349","lon":"51.27065556754525","local_date_time":null,"local_date_time_full":"2023456484542","air_temp":"35.291352293572615","apparent_t":"-8.694499831707965","cloud":"Clear","dewpt":"27.635005137803233","press":"1063.2996393913788","rel_hum":"56","wind_dir":"E","wind_spd_kmh":"4","wind_spd_kt":"19"}
+Oct 08, 2023 2:41:32 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"AEDT","lat":"29.879528701300686","lon":"67.20628854422841","local_date_time":null,"local_date_time_full":"20232631185554","air_temp":"-6.585829927139654","apparent_t":"9.903714999226779","cloud":"Partly cloudy","dewpt":"-6.537314548836495","press":"971.5696815937133","rel_hum":"83","wind_dir":"NE","wind_spd_kmh":"0","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:32 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"CST","lat":"55.58719740027803","lon":"-55.49947834085884","local_date_time":null,"local_date_time_full":"2023117842314","air_temp":"-8.77960168814126","apparent_t":"8.137165023477454","cloud":"Clear","dewpt":"14.684002391586823","press":"956.3578829113173","rel_hum":"9","wind_dir":"NW","wind_spd_kmh":"19","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:32 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:32 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:32 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:32 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:32 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:32 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:32 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:32 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"PST","lat":"-64.27048608930299","lon":"-38.880632721207945","local_date_time":null,"local_date_time_full":"2023870319938","air_temp":"8.82242861057632","apparent_t":"29.39333476968212","cloud":"Mostly cloudy","dewpt":"-9.511217490303725","press":"1026.316961126169","rel_hum":"28","wind_dir":"S","wind_spd_kmh":"4","wind_spd_kt":"2"}
+Oct 08, 2023 2:41:33 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"CST","lat":"-32.77230452693711","lon":"-72.2282544685488","local_date_time":null,"local_date_time_full":"2023349213954","air_temp":"22.565612631377874","apparent_t":"14.03638174425302","cloud":"Clear","dewpt":"11.843274846405329","press":"1051.1496735035807","rel_hum":"71","wind_dir":"NW","wind_spd_kmh":"18","wind_spd_kt":"12"}
+Oct 08, 2023 2:41:33 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"JST","lat":"-43.146757413286295","lon":"117.36910147220948","local_date_time":null,"local_date_time_full":"2023618625237","air_temp":"7.054813231186834","apparent_t":"-8.99555546762434","cloud":"Partly cloudy","dewpt":"-5.331101406139531","press":"951.3938388095321","rel_hum":"1","wind_dir":"SE","wind_spd_kmh":"25","wind_spd_kt":"16"}
+Oct 08, 2023 2:41:33 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"CST","lat":"-56.51380477220646","lon":"147.50557237330673","local_date_time":null,"local_date_time_full":"20239714233530","air_temp":"31.69266409361169","apparent_t":"10.793408612855043","cloud":"Clear","dewpt":"25.43996148423694","press":"920.7157325111667","rel_hum":"78","wind_dir":"NE","wind_spd_kmh":"18","wind_spd_kt":"1"}
+Oct 08, 2023 2:41:33 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"ECT","lat":"73.87735038863477","lon":"44.23474264942641","local_date_time":null,"local_date_time_full":"202341454455","air_temp":"24.601666674161628","apparent_t":"15.878739466446248","cloud":"Overcast","dewpt":"7.623825954723216","press":"997.0280121009686","rel_hum":"81","wind_dir":"SW","wind_spd_kmh":"4","wind_spd_kt":"11"}
+Oct 08, 2023 2:41:33 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"JST","lat":"-23.30996087267137","lon":"-38.94797735170121","local_date_time":null,"local_date_time_full":"202355411543","air_temp":"19.25008184010054","apparent_t":"9.477112826378363","cloud":"Clear","dewpt":"13.79002378052229","press":"1099.088085425624","rel_hum":"37","wind_dir":"SE","wind_spd_kmh":"5","wind_spd_kt":"0"}
+Oct 08, 2023 2:41:33 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:33 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:33 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:33 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:33 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:33 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:33 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:33 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"EST","lat":"-14.007062451684675","lon":"-67.18421989298271","local_date_time":null,"local_date_time_full":"2023229517538","air_temp":"18.75231273996523","apparent_t":"24.419794629816337","cloud":"Clear","dewpt":"27.114624623639926","press":"1030.4454179248035","rel_hum":"77","wind_dir":"NE","wind_spd_kmh":"9","wind_spd_kt":"16"}
+Oct 08, 2023 2:41:34 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60901","name":"Adelaide","state":"SA","time_zone":"CST","lat":"77.94456429158407","lon":"-12.47486179763851","local_date_time":null,"local_date_time_full":"202312646122834","air_temp":"28.470752499135628","apparent_t":"30.594413873883255","cloud":"Mostly cloudy","dewpt":"-4.444015381212885","press":"1039.9366236781254","rel_hum":"100","wind_dir":"E","wind_spd_kmh":"22","wind_spd_kt":"10"}
+Oct 08, 2023 2:41:34 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:34 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:34 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:34 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:34 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:34 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:34 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:34 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"AEDT","lat":"16.139729032591973","lon":"138.45449076807205","local_date_time":null,"local_date_time_full":"20235807112645","air_temp":"30.20311823173106","apparent_t":"8.053844549362875","cloud":"Clear","dewpt":"16.40946980560903","press":"961.2825268111139","rel_hum":"75","wind_dir":"N","wind_spd_kmh":"22","wind_spd_kt":"14"}
+Oct 08, 2023 2:41:35 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60902","name":"Sydney","state":"NSW","time_zone":"AEDT","lat":"-20.938643198452723","lon":"-14.707897188040931","local_date_time":null,"local_date_time_full":"202311391172518","air_temp":"31.981815339384248","apparent_t":"35.86286678697212","cloud":"Mostly cloudy","dewpt":"27.69381434212719","press":"1051.378599144837","rel_hum":"14","wind_dir":"E","wind_spd_kmh":"15","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:35 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:35 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:35 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"IST","lat":"52.95857596345522","lon":"144.44061702705312","local_date_time":null,"local_date_time_full":"20231172410328","air_temp":"-0.5997399322131187","apparent_t":"24.408690831368787","cloud":"Overcast","dewpt":"22.468347437626974","press":"937.464883351973","rel_hum":"80","wind_dir":"E","wind_spd_kmh":"13","wind_spd_kt":"11"}
+Oct 08, 2023 2:41:36 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60903","name":"Brisbane","state":"QLD","time_zone":"GMT","lat":"-3.88588859838255","lon":"-35.07912946344351","local_date_time":null,"local_date_time_full":"202312181203420","air_temp":"3.1764727772714743","apparent_t":"10.18054122894582","cloud":"Clear","dewpt":"-6.209243613268991","press":"983.6464496690122","rel_hum":"39","wind_dir":"S","wind_spd_kmh":"10","wind_spd_kt":"16"}
+Oct 08, 2023 2:41:36 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:36 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:36 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"AEDT","lat":"11.63371929466156","lon":"30.614468943757515","local_date_time":null,"local_date_time_full":"2023964503230","air_temp":"19.379303587540477","apparent_t":"14.341456877310215","cloud":"Partly cloudy","dewpt":"20.21409250523787","press":"1013.5745809204483","rel_hum":"61","wind_dir":"SE","wind_spd_kmh":"1","wind_spd_kt":"18"}
+Oct 08, 2023 2:41:37 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60904","name":"Melbourne","state":"VIC","time_zone":"GMT","lat":"-84.84319528725621","lon":"-69.46712824670232","local_date_time":null,"local_date_time_full":"2023685932932","air_temp":"19.97344051360012","apparent_t":"7.944398817064744","cloud":"Clear","dewpt":"11.448320323216947","press":"960.4267227513479","rel_hum":"12","wind_dir":"SE","wind_spd_kmh":"1","wind_spd_kt":"1"}
+Oct 08, 2023 2:41:37 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:37 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:37 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"ECT","lat":"-50.89285043218682","lon":"25.19116896429503","local_date_time":null,"local_date_time_full":"2023183502035","air_temp":"-6.886706154612473","apparent_t":"18.66076305286703","cloud":"Mostly cloudy","dewpt":"-9.456482459306347","press":"1012.064420040418","rel_hum":"42","wind_dir":"SW","wind_spd_kmh":"5","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:38 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60905","name":"Perth","state":"WA","time_zone":"AEDT","lat":"-17.15879423403355","lon":"-36.67367807269471","local_date_time":null,"local_date_time_full":"20231038014503","air_temp":"9.244759765144849","apparent_t":"20.36995741804266","cloud":"Partly cloudy","dewpt":"23.042178951803322","press":"1058.8563052425284","rel_hum":"3","wind_dir":"NE","wind_spd_kmh":"1","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:38 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:38 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:38 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"JST","lat":"75.07944575937051","lon":"151.20064210571343","local_date_time":null,"local_date_time_full":"2023949781918","air_temp":"37.659806502457315","apparent_t":"17.1614251183108","cloud":"Clear","dewpt":"19.39479733354071","press":"931.8303288055132","rel_hum":"87","wind_dir":"SW","wind_spd_kmh":"18","wind_spd_kt":"1"}
+Oct 08, 2023 2:41:39 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60906","name":"Mount Gambier","state":"SA","time_zone":"CST","lat":"-34.605948042683906","lon":"-6.997096861765243","local_date_time":null,"local_date_time_full":"20231117135810","air_temp":"30.828611030692144","apparent_t":"26.23926007803086","cloud":"Partly cloudy","dewpt":"-1.5277480042770861","press":"993.7006355015927","rel_hum":"3","wind_dir":"W","wind_spd_kmh":"27","wind_spd_kt":"4"}
+Oct 08, 2023 2:41:39 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:39 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:39 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"AEDT","lat":"10.878677221004821","lon":"-117.50637811067212","local_date_time":null,"local_date_time_full":"20232558125614","air_temp":"17.946506275522943","apparent_t":"-9.228190335132988","cloud":"Mostly cloudy","dewpt":"18.79747881919101","press":"1077.9184906798837","rel_hum":"96","wind_dir":"E","wind_spd_kmh":"6","wind_spd_kt":"3"}
+Oct 08, 2023 2:41:40 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60907","name":"Newcastle","state":"NSW","time_zone":"ECT","lat":"22.906440616517727","lon":"-89.50598451353426","local_date_time":null,"local_date_time_full":"202335663384","air_temp":"12.175620440169197","apparent_t":"-5.565203237000674","cloud":"Partly cloudy","dewpt":"22.18817002414834","press":"968.3919509126547","rel_hum":"55","wind_dir":"S","wind_spd_kmh":"12","wind_spd_kt":"10"}
+Oct 08, 2023 2:41:40 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:40 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:40 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:40 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:40 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:40 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:40 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:40 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"CST","lat":"-89.2186516507558","lon":"-140.71030355914962","local_date_time":null,"local_date_time_full":"202310907224926","air_temp":"4.98086876111725","apparent_t":"32.94417516001293","cloud":"Clear","dewpt":"-8.58468217552662","press":"1049.4533917807107","rel_hum":"45","wind_dir":"SW","wind_spd_kmh":"2","wind_spd_kt":"10"}
+Oct 08, 2023 2:41:41 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60908","name":"Gold Coast","state":"QLD","time_zone":"CST","lat":"-47.47837877308085","lon":"-121.0046305567086","local_date_time":null,"local_date_time_full":"202311515101341","air_temp":"10.953001570719266","apparent_t":"35.24003744131318","cloud":"Partly cloudy","dewpt":"24.164014570541966","press":"933.7344181237646","rel_hum":"48","wind_dir":"SW","wind_spd_kmh":"16","wind_spd_kt":"13"}
+Oct 08, 2023 2:41:41 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:41 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:41 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"JST","lat":"87.45087916281983","lon":"-14.14433913671624","local_date_time":null,"local_date_time_full":"2023864414290","air_temp":"31.3473130729867","apparent_t":"11.25836955301219","cloud":"Mostly cloudy","dewpt":"-4.135238551953075","press":"1088.7741936551404","rel_hum":"25","wind_dir":"SE","wind_spd_kmh":"29","wind_spd_kt":"15"}
+Oct 08, 2023 2:41:42 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60909","name":"Geelong","state":"VIC","time_zone":"EST","lat":"-51.06004926754252","lon":"69.65968279018605","local_date_time":null,"local_date_time_full":"2023122984225","air_temp":"22.919669668537118","apparent_t":"19.519805281852218","cloud":"Overcast","dewpt":"17.55170332948942","press":"1013.947529354979","rel_hum":"85","wind_dir":"W","wind_spd_kmh":"6","wind_spd_kt":"7"}
+Oct 08, 2023 2:41:42 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:42 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:42 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"EST","lat":"48.37364002853582","lon":"147.0569308892878","local_date_time":null,"local_date_time_full":"202363469336","air_temp":"16.5533176664854","apparent_t":"35.743697017407875","cloud":"Partly cloudy","dewpt":"-7.167062403272744","press":"945.5238932000757","rel_hum":"84","wind_dir":"SE","wind_spd_kmh":"6","wind_spd_kt":"8"}
+Oct 08, 2023 2:41:43 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New CS Connection. JSON Body:
+{"id":"IDS60910","name":"Fremantle","state":"WA","time_zone":"PST","lat":"-76.39081783678871","lon":"-51.40410238196873","local_date_time":null,"local_date_time_full":"202387872623","air_temp":"36.3785505883375","apparent_t":"16.956957179809386","cloud":"Clear","dewpt":"14.329503084370437","press":"956.2274977239136","rel_hum":"76","wind_dir":"E","wind_spd_kmh":"21","wind_spd_kt":"19"}
+Oct 08, 2023 2:41:43 PM src.AggregationServer handlePutRequest
+INFO: Response sent to CS immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:43 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:43 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:43 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:43 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:43 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:43 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:43 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:44 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:41:44 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:44 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:44 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:44 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:44 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:44 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:41:45 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:45 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:45 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:45 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:45 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:45 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:45 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:46 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:46 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:46 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:46 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:47 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:47 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:47 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:47 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:48 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:48 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:48 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:48 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:49 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:49 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:49 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:49 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:50 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:50 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:50 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:50 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:51 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:41:51 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:51 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:51 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:52 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:52 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:52 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:52 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:53 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:53 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:53 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:53 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:54 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:54 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:54 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:54 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:55 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:55 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:41:55 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:55 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:56 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:41:56 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60902
+Oct 08, 2023 2:41:56 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:56 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:57 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:57 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:57 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:57 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:58 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60909
+Oct 08, 2023 2:41:58 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:41:58 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:58 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:41:59 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60904
+Oct 08, 2023 2:41:59 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:41:59 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:41:59 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:42:00 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:42:00 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:42:00 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:42:00 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:42:01 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60901
+Oct 08, 2023 2:42:01 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60903
+Oct 08, 2023 2:42:01 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:42:01 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:42:02 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60905
+Oct 08, 2023 2:42:02 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:42:02 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:42:02 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:42:03 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:42:03 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:42:03 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:42:03 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:42:04 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60908
+Oct 08, 2023 2:42:04 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60907
+Oct 08, 2023 2:42:04 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:42:04 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
+Oct 08, 2023 2:42:05 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60910
+Oct 08, 2023 2:42:05 PM src.AggregationServer$ClientHandler run
+INFO: New Client Connection. Requested City: IDS60906
+Oct 08, 2023 2:42:05 PM src.AggregationServer handleGetRequest
+INFO: Response sent to Client immidiately
+Oct 08, 2023 2:42:05 PM src.AggregationServer$RequestProcessor processGetRequest
+INFO: Response sent to Client after queueing
