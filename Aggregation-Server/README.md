@@ -28,6 +28,7 @@ The project has the following structure:
 
 - **src**: Contains the Java source code files.
 - **lib**: Contains external JAR libraries, including Jackson libraries.
+- **logs**: Folder for log files of all CS based on their IDs.
 - **out**: The output directory for compiled Java classes.
 - **makefile**: A makefile for building, running, and cleaning the project.
 
@@ -50,7 +51,7 @@ To build the Aggregation Server application, follow these steps:
 After building the application, you can run it with the following command:
 
 ```shell
-make run
+make run-as
 ```
 
 ### 5. Usage

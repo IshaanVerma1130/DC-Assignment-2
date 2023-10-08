@@ -28,6 +28,7 @@ The project has the following structure:
 
 - **src**: Contains the Java source code files.
 - **lib**: Contains external JAR libraries, including Jackson libraries.
+- **logs**: Folder for log files of all CS based on their IDs.
 - **resources**: Directory for storing JSON data files.
 - **out**: The output directory for compiled Java classes.
 - **makefile**: A makefile for building, running, and cleaning the project.
@@ -51,7 +52,7 @@ To build the GETClient application, follow these steps:
 After building the application, you can run it with the following command:
 
 ```shell
-make run
+make run-client
 ```
 
 By default, this command runs the GETClient application with the following arguments:
@@ -62,11 +63,23 @@ By default, this command runs the GETClient application with the following argum
 
 You can modify the default arguments in the makefile (under the ARGS variable) or specify your own arguments when running the application.
 
-### 5. Usage
+### 5. Testing
+
+This runs multiple Clients concurrently in different threads.
+
+```shell
+make run-test
+```
+
+By default, this runs 8 Clients in different threads. This can be modified from the makefile by changing the `ARG` variable. Other arguments like `PORT` and `SERVER URL` remain the same.
+
+`Note`: Total number of configured threads is `6`. You can change this from the `test/TestClient.java` file.
+
+### 6. Usage
 
 The GETClient application reads a list of city IDs from a text file, sends HTTP GET requests to a server for weather data for each city, and processes server responses. It utilizes Jackson libraries to handle JSON responses and display weather data.
 
-### 6. Cleaning up
+### 7. Cleaning up
 
 To clean the compiled files and JAR, run the following command:
 
