@@ -89,56 +89,62 @@ public class CS {
                     boolean success = false;
 
                     while (!success && retryCount < maxRetries) {
-                        // Establish a socket connection to the server
-                        Socket socket = new Socket(SERVER_URL, PORT);
-                        OutputStream out = socket.getOutputStream();
-                        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-                        // Generate a POST request
-                        String requestString = Utils.generatePostRequest(SERVER_URL, clientTimestamp,
-                                jsonObject.toString());
-
-                        // Send the request to the server
-                        out.write(requestString.getBytes());
-                        out.flush();
-
-                        // Log the sent request
-                        logger.info("\r\nSending request to AS.\r\n" + requestString + "\r\n");
-
-                        // Read the server's response tag
-                        String responseTag = in.readLine();
-
-                        if (responseTag.equals("OK")) {
-                            logger.info("Server processed request immediately.\r\n");
-                            processRequest(in);
-                            success = true;
-
-                        } else if (responseTag.equals("WAIT")) {
-                            logger.info("Waiting for server.\r\n");
-
-                            // Read the "PROCESSING" response
-                            String waitResponse = in.readLine();
-                            if (waitResponse.equals("PROCESSING")) {
-                                processRequest(in);
-                                logger.info(
-                                        "CS updated timestamp after processing request: " + clientTimestamp + "\r\n");
-                                success = true;
-                            }
-                        } else {
-                            logger.severe("Error processing request.");
-                            retryCount++;
-                        }
-
-                        // Close socket, input stream, and output stream
-                        out.close();
-                        in.close();
-                        socket.close();
-
                         try {
-                            // Sleep for 1000 milliseconds (1 second)
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            // Handle the InterruptedException if needed
+                            // Establish a socket connection to the server
+                            Socket socket = new Socket(SERVER_URL, PORT);
+                            OutputStream out = socket.getOutputStream();
+                            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+                            // Generate a POST request
+                            String requestString = Utils.generatePostRequest(SERVER_URL, clientTimestamp,
+                                    jsonObject.toString());
+
+                            // Send the request to the server
+                            out.write(requestString.getBytes());
+                            out.flush();
+
+                            // Log the sent request
+                            logger.info("\r\nSending request to AS.\r\n" + requestString + "\r\n");
+
+                            // Read the server's response tag
+                            String responseTag = in.readLine();
+
+                            if (responseTag.equals("OK")) {
+                                logger.info("Server processed request immediately.\r\n");
+                                processRequest(in);
+                                success = true;
+
+                            } else if (responseTag.equals("WAIT")) {
+                                logger.info("Waiting for server.\r\n");
+
+                                // Read the "PROCESSING" response
+                                String waitResponse = in.readLine();
+                                if (waitResponse.equals("PROCESSING")) {
+                                    processRequest(in);
+                                    logger.info(
+                                            "CS updated timestamp after processing request: " + clientTimestamp
+                                                    + "\r\n");
+                                    success = true;
+                                }
+                            } else {
+                                logger.severe("Error processing request.");
+                                retryCount++;
+                            }
+
+                            // Close socket, input stream, and output stream
+                            out.close();
+                            in.close();
+                            socket.close();
+
+                            try {
+                                // Sleep for 1000 milliseconds (1 second)
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                // Handle the InterruptedException if needed
+                            }
+                        } catch (ConnectException e) {
+                            logger.severe("Retry Count: " + retryCount + "\r\n" + e.toString());
+                            retryCount++;
                         }
                     }
 
@@ -148,8 +154,6 @@ public class CS {
                     retryCount = 0;
                 }
             }
-        } catch (ConnectException e) {
-            logger.severe(e.toString());
         } catch (FileNotFoundException e) {
             logger.severe(e.getMessage());
         } catch (IOException e) {
