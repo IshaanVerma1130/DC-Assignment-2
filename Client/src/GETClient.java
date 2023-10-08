@@ -48,7 +48,7 @@ public class GETClient {
             // Add the FileHandler to the Logger
             logger.addHandler(logHandler);
 
-            logger.info("Log File for Client " + CLIENT_ID);
+            logger.info("Log File for Client " + CLIENT_ID + "\r\n");
 
         } catch (IOException e) {
             System.out.println("Error creating logger. Client " + CLIENT_ID);
@@ -83,17 +83,18 @@ public class GETClient {
                     String responseTag = in.readLine();
 
                     if (responseTag.equals("OK")) {
-                        logger.info("Server processed request immidiately.");
-                        processRequest(in);
+                        logger.info("Server processed request immidiately.\r\n");
+                        processRequest(in, logger);
                         success = true;
 
                     } else if (responseTag.equals("WAIT")) {
-                        logger.info("Waiting for server.");
+                        logger.info("Waiting for server.\r\n");
 
                         String waitResponse = in.readLine();
                         if (waitResponse.equals("PROCESSING")) {
-                            processRequest(in);
-                            logger.info("Client updated timestamp after processing request: " + clientTimestamp);
+                            processRequest(in, logger);
+                            logger.info(
+                                    "Client updated timestamp after processing request: " + clientTimestamp + "\r\n");
                             success = true;
                         }
                     } else {
@@ -132,13 +133,16 @@ public class GETClient {
         clientTimestamp = Math.max(clientTimestamp, serverTimestamp) + 1;
     }
 
-    private static void processRequest(BufferedReader in) {
+    private static void processRequest(BufferedReader in, Logger logger) {
         Map<String, String> headers = getHeaders(in);
 
         int contentLength = Integer.parseInt(headers.getOrDefault("Content-Length", "0"));
 
         WeatherData responseObject = getJsonData(in, contentLength);
-        Utils.printResponse(responseObject);
+        String printString = Utils.printResponse(responseObject);
+        System.out.println(printString);
+
+        logger.info("Response from server:\r\n" + printString);
 
         int serverTimestamp = Integer.parseInt(headers.getOrDefault("TIME-STAMP", "0"));
         updateClientTimestamp(serverTimestamp);

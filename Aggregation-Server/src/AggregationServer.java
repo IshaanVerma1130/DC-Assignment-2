@@ -72,11 +72,11 @@ public class AggregationServer {
             for (int i = 0; i < NUM_THREADS; i++) {
                 Thread processorThread = new Thread(new RequestProcessor());
                 processorThread.start();
-                logger.info("Starting processing thread No. " + i);
+                logger.info("Starting processing thread No. " + i + "\r\n");
             }
 
             deletionScheduler.scheduleAtFixedRate(AggregationServer::cleanupOldRequests, 0, 45, TimeUnit.SECONDS);
-            logger.info("Starting periodic deletion thread");
+            logger.info("Starting periodic deletion thread. Deletion time it set to 45 seconds.\r\n");
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
@@ -157,13 +157,13 @@ public class AggregationServer {
 
                 if ("GET".equalsIgnoreCase(requestMethod)) {
                     String id = headers.get("CITY-ID");
-                    logger.info("New Client Connection. Requested City: " + id);
+                    logger.info("New Client Connection. Requested City: " + id + "\r\n");
                     handleGetRequest(clientTimestamp, id, clientSocket);
                 } else if ("PUT".equalsIgnoreCase(requestMethod)) {
                     char[] body = new char[Integer.parseInt(headers.get("Content-Length"))];
                     in.read(body);
                     String jsonRequest = new String(body);
-                    logger.info("New CS Connection. JSON Body:\r\n" + jsonRequest);
+                    logger.info("New CS Connection. JSON Body:\r\n" + jsonRequest + "\r\n");
                     handlePutRequest(clientTimestamp, jsonRequest, clientSocket);
                 }
             } catch (SocketException e) {
@@ -199,7 +199,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 clientSocket.close();
-                logger.info("Response sent to Client immidiately");
+                logger.info("Response sent to Client immidiately\r\n");
             } else {
                 out.write("WAIT\r\n".getBytes());
                 enqueueRequest("GET", clientTimestamp, id, clientSocket);
@@ -221,7 +221,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 clientSocket.close();
-                logger.info("Response sent to CS immidiately");
+                logger.info("Response sent to CS immidiately\r\n");
             } else {
                 out.write("WAIT\r\n".getBytes());
                 enqueueRequest("PUT", clientTimestamp, jsonRequest, clientSocket);
@@ -283,7 +283,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 request.clientSocket.close();
-                logger.info("Response sent to Client after queueing");
+                logger.info("Response sent to Client after queueing\r\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -300,7 +300,7 @@ public class AggregationServer {
                 out.write(jsonResponse.getBytes());
                 out.close();
                 request.clientSocket.close();
-                logger.info("Response sent to CS after queueing");
+                logger.info("Response sent to CS after queueing\r\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }

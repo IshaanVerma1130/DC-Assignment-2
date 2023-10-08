@@ -51,7 +51,7 @@ public class CS {
             // Add the FileHandler to the Logger
             logger.addHandler(logHandler);
 
-            logger.info("Log File for CS " + CS_ID);
+            logger.info("Log File for CS " + CS_ID + "\r\n");
 
         } catch (IOException e) {
             System.out.println("Error creating logger. CS " + CS_ID);
@@ -61,7 +61,7 @@ public class CS {
         int maxRetries = 3;
         int retryCount = 0;
 
-        logger.info("Starting CS " + CS_ID);
+        logger.info("Starting CS " + CS_ID + "\r\n");
 
         try {
             List<WeatherData> entries = Utils.generateJson(CS_ID);
@@ -89,22 +89,23 @@ public class CS {
                         out.write(requestString.getBytes());
                         out.flush();
 
-                        logger.info("\r\nSending reqeuest to AS." + requestString);
+                        logger.info("\r\nSending reqeuest to AS.\r\n" + requestString + "\r\n");
 
                         String responseTag = in.readLine();
 
                         if (responseTag.equals("OK")) {
-                            logger.info("Server processed request immidiately.");
+                            logger.info("Server processed request immidiately.\r\n");
                             processRequest(in);
                             success = true;
 
                         } else if (responseTag.equals("WAIT")) {
-                            logger.info("Waiting for server.");
+                            logger.info("Waiting for server.\r\n");
 
                             String waitResponse = in.readLine();
                             if (waitResponse.equals("PROCESSING")) {
                                 processRequest(in);
-                                logger.info("CS updated timestamp after processing request: " + clientTimestamp);
+                                logger.info(
+                                        "CS updated timestamp after processing request: " + clientTimestamp + "\r\n");
                                 success = true;
                             }
                         } else {
